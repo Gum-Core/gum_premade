@@ -1,0 +1,276 @@
+@font-face {
+    font-family: 'crock';
+    src: url('crock.ttf');
+}
+
+@font-face {
+    font-family: 'crock2';
+    src: url('kaola.ttf');
+}
+
+@font-face {
+    font-family: 'crock3';
+    src: url('text.ttf');
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+
+::-webkit-scrollbar-track {
+    background: rgb(73, 73, 73); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b3b3b3; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: rgb(39, 39, 39); 
+}
+
+
+body {
+    background: none !important;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+.align-left {
+   text-align: left;
+   left: -15px;
+}
+
+#container {
+    display: block;
+    padding: 25px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 50%;
+    left: 13%;
+    transform: translate(-50%, -50%);
+    width: 380px;
+    max-width: 381px;
+    height: 590px;
+    max-height: 591px;
+    background-image: url('background.png');
+    background-size: 100% 100%;
+}
+
+#button_container {
+    position:absolute;
+    overflow-y: auto;
+    top: 150px;
+    height: 470px;
+    width: 380px;
+}
+::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
+
+ input{
+    text-align:center;
+ }
+#firstname{
+    background-color: transparent;
+    background-repeat: no-repeat;    
+    border: none;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    font-family: 'crock3';
+    position:relative;
+    width: 330px;
+    height: 37px;
+    background-image: url('button.png');
+    background-size: 100% 100%;
+    font-size: 30px;
+    left:20px;
+    padding-top:5px;
+}
+#lastname{
+    background-color: transparent;
+    background-repeat: no-repeat;    
+    border: none;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    font-family: 'crock3';
+    position:relative;
+    width: 330px;
+    height: 37px;
+    background-image: url('button.png');
+    background-size: 100% 100%;
+    font-size: 30px;
+    left:20px;
+    padding-top:5px;
+}
+
+#save{
+    background-color: transparent;
+    background-repeat: no-repeat;    
+    border: none;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    font-family: 'crock';
+    position:relative;
+    width: 330px;
+    height: 32px;
+    background-image: url('button.png');
+    background-size: 100% 100%;
+    font-size: 19px;
+    left:20px;
+    padding-top:10px;
+}
+#save:hover{
+    background-color: transparent;
+    background-repeat: no-repeat;    
+    border: none;
+    overflow: hidden;
+    outline: none;
+    color: white;
+    font-family: 'crock';
+    position:relative;
+    width: 330px;
+    height: 32px;
+    background-image: url('sbutton.png');
+    background-size: 100% 100%;
+    font-size: 19px;
+    left:20px;
+    padding-top:10px;
+}
+#button {
+    font-family: 'crock';
+    position:relative;
+    width: 330px;
+    height: fit-content;
+    background-image: url('button.png');
+    background-size: 100% 100%;
+    left:20px;
+    font-size:15px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#header {
+    font-family: 'crock';
+    position:absolute;
+    width: 345px;
+    height: 70px;
+    font-size: 30px;
+    background-image: url('title.png');
+    background-size: 100% 100%;
+    left:20px;
+    padding-top:25px;
+    padding-left:45px;
+}
+#buttoncolor {
+    font-family: 'crock';
+    position:relative;
+    width: 330px;
+    font-size:13px;
+    height: fit-content;
+    max-height: 200px;
+    background-image: url('button.png');
+    background-size: 100% 100%;
+    left:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#button2 {
+    font-family: 'crock2';
+    position:relative;
+    width: 330px;
+    height: 37px;
+    font-size: 22px;
+    background-image: url('sbutton.png');
+    background-size: 100% 100%;
+    left:20px;
+    padding-top:5px;
+}
+  
+.slider {
+    position:relative;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 90%; /* Full-width */
+  height: 7px; /* Specified height */
+  background: #9c9c9c; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.6; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius:10px;
+  padding-top:1px;
+  left: 2%;
+}
+.slider2 {
+    position:relative;
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 70%; /* Full-width */
+  height: 7px; /* Specified height */
+  background: #9c9c9c; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.6; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius:10px;
+  padding-top:1px;
+  left: 2%;
+}
+
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 13px; /* Set a specific slider handle width */
+    height: 13px; /* Slider handle height */
+    background: #9c0101; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 100%;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 13px; /* Set a specific slider handle width */
+    height: 13px; /* Slider handle height */
+    background: #b8b8b8; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 100%;
+}
+.slider2::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 13px; /* Set a specific slider handle width */
+    height: 13px; /* Slider handle height */
+    background: #9c0101; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 100%;
+  }
+  
+  .slider2::-moz-range-thumb {
+    width: 13px; /* Set a specific slider handle width */
+    height: 13px; /* Slider handle height */
+    background: #b8b8b8; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 100%;
+}

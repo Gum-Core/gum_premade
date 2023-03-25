@@ -1,0 +1,258 @@
+@font-face {
+    font-family: 'crock';
+    src: url('crock.ttf');
+}
+
+@font-face {
+    font-family: 'crock2';
+    src: url('kaola.ttf');
+}
+
+@font-face {
+    font-family: 'crock3';
+    src: url('text.ttf');
+}
+video::-webkit-media-controls {
+    display: none;
+  }
+body {
+    background: none !important;
+}
+.align-left {
+   text-align: left;
+   left: -15px;
+}
+
+#container {
+    display: block;
+    background-image: url('screen.jpg');
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-size: 100% 100%;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+#container2 {
+    display: block;
+    -webkit-user-drag: element;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    position: absolute;
+    bottom: 17%;
+    left: 8%;
+    width: 400px;
+    height: 220px;
+    background-image: url('select_char.png');
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition-duration: 2.0;
+}
+
+#title {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-position: center;
+    background-color: transparent;
+    background-image: url('sbutton.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 210px;
+    height: 30px;
+    padding-left: 40px;
+    font-family: 'crock';
+    font-size: 17px;
+    top: 10px;
+    left: 80px;
+}
+
+#make_char {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-position: center;
+    background-color: transparent;
+    background-image: url('button.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 210px;
+    height: 30px;
+    font-family: 'crock';
+    font-size: 18px;
+    padding-left: 40px;
+    top: 100%;
+    left: 20%;
+}
+#make_char:hover {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-position: center;
+    background-color: transparent;
+    background-image: url('sbutton.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 210px;
+    height: 30px;
+    font-family: 'crock';
+    font-size: 18px;
+    padding-left: 40px;
+    top: 100%;
+    left: 20%;
+}
+
+#name {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock';
+    font-size: 21px;
+    top: 60px;
+    left: 53px;
+}
+#name_text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock3';
+    font-size: 31px;
+    top: 50px;
+    left: 150px;
+}
+
+#gender {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock';
+    font-size: 21px;
+    top: 90px;
+    left: 30px;
+}
+#gender_text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock3';
+    font-size: 31px;
+    top: 80px;
+    left: 150px;
+}
+
+#money {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock';
+    font-size: 21px;
+    top: 120px;
+    left: 40px;
+}
+#money_text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock3';
+    font-size: 31px;
+    top: 110px;
+    left: 150px;
+}
+
+#gold {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock';
+    font-size: 21px;
+    top: 150px;
+    left: 53px;
+}
+#gold_text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock3';
+    font-size: 31px;
+    top: 140px;
+    left: 150px;
+}
+
+#job {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock';
+    font-size: 21px;
+    top: 180px;
+    left: 67px;
+}
+#job_text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-family: 'crock3';
+    font-size: 31px;
+    top: 170px;
+    left: 150px;
+}
+
+#switch {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-position: center;
+    background-color: transparent;
+    background-image: url('char_b.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 10px;
+    height: 50px;
+    padding-left: 40px;
+    font-family: 'crock';
+    font-size: 17px;
+    bottom: 70px;
+    right: 50px;
+}
+#switch:hover {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-position: center;
+    background-color: transparent;
+    background-image: url('char_bs.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 10px;
+    height: 50px;
+    padding-left: 40px;
+    font-family: 'crock';
+    font-size: 17px;
+    bottom: 70px;
+    right: 50px;
+}
+
+#select {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-position: center;
+    background-color: transparent;
+    background-image: url('r_arrow.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 0px;
+    height: 40px;
+    padding-left: 40px;
+    font-family: 'crock';
+    font-size: 17px;
+    bottom: 20px;
+    right: 50px;
+}
+#select:hover {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    background-position: center;
+    background-color: transparent;
+    background-image: url('ar_arrow.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 0px;
+    height: 40px;
+    padding-left: 40px;
+    font-family: 'crock';
+    font-size: 17px;
+    bottom: 20px;
+    right: 50px;
+}

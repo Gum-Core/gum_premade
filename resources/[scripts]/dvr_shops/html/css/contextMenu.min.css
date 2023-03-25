@@ -1,0 +1,51 @@
+.site-cm-box {
+	border: 1px solid #740505;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background-color: rgb(34, 34, 34);
+	z-index: 900;
+}
+
+.site-cm-group {
+	margin: 0;
+	padding: 0
+}
+
+.site-cm-box ul.site-cm-group li {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 2px;
+	line-height: 39px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	color: rgb(231, 231, 231);
+	cursor: default
+}
+
+.site-cm-box .site-cm-separ {
+	height: 0;
+	border-top: 1px solid #6d6d6d
+}
+
+.site-cm-box ul.site-cm-group li.hover,
+.site-cm-box ul.site-cm-group li:hover {
+	color: #fff;
+	background-color: #6d6d6d
+}
+
+.site-cm-box ul.site-cm-group li>.site-cm-box {
+	left: 185px;
+	margin-top: -20px
+}
+
+.site-cm-box ul.site-cm-group li.hover>.site-cm-box,
+.site-cm-box ul.site-cm-group li:hover>.site-cm-box {
+	color: rgb(230, 230, 230)
+}
+
+.site-cm-icon {
+	color: #666;
+	width: 20px
+}

@@ -1,0 +1,33 @@
+<html>
+	<head>
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        </head>
+	<body>
+        <div id="container"> 
+            <form id="form_id">
+                <div id="header">This is header text</div>
+                <input type="text" id="text_input">
+              </form>
+            <div id="button_1" onclick="close_input()">Leave</div>
+            <div id="button_2" onclick="send_values()">Access</div>
+            <input type="submit" style="visibility: hidden;" />
+        </div>
+        <div id="container2"> 
+                <div id="header2">This is header text</div>
+                <div id="button_2_ans" onclick="yes_func()">Ano</div>
+                <div id="button_1_ans" onclick="no_func()">Ne</div>
+            </div>
+        <script src="./index.js" type="text/javascript"></script>
+	</body>
+        <script>
+                $(document).ready(function() {
+                        $(window).keydown(function(event){
+                                if(event.keyCode == 13) {
+                                        event.preventDefault();
+                                        return false;
+                                }
+                        });
+                });
+        </script>
+</html>

@@ -1,0 +1,67 @@
+<html>
+	<head>
+        <link rel="stylesheet" href="index.css" type="text/css">
+
+        <!-- <script src="nui://game/ui/jquery.js" type="text/javascript"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+	<body>
+        <div id="storageManage">
+            <div class="gridManage" id="gridManage"></div>
+        </div>
+        <div id="bankManage">
+            <div class="gridBankManage" id="gridBankManage"></div>
+        </div>
+        <div id="contextMenu" class="context-menu" style="display: none"> 
+            <ul class="menu"> 
+                <li class="access" onclick="openAccessList()"><a href="#"><i id="accessMe"></i>Přístupy</a></li> 
+                <li class="prepay"  onclick="prepayStorage()"><a href="#"><i id="prepayMe"></i>Předplatit</a></li> 
+            </ul> 
+        </div> 
+        <div id="contextMenu2" class="context-menu" style="display: none"> 
+            <ul class="menu">
+                <li class="access" onclick="openAccessListBank()"><a href="#"><i id="accessMe"></i>Přístupy</a></li> 
+            </ul> 
+        </div> 
+        <script src="./index.js" type="text/javascript"></script>
+        <script>
+            document.onclick = hideMenu; 
+            document.oncontextmenu = rightClick; 
+     
+            function hideMenu() { 
+                 document.getElementById("contextMenu").style.display = "none" 
+                 contextMenu = false
+                 document.getElementById("contextMenu2").style.display = "none" 
+                 contextMenu = false
+             } 
+     
+             function rightClick(e) { 
+                 e.preventDefault(); 
+                 if (e.target.id === "button" || e.target.id === "buttonNoClickBank") {
+                    if (document.getElementById("contextMenu") .style.display == "block" || document.getElementById("contextMenu2") .style.display == "block"){ 
+                        hideMenu(); 
+                    }else{ 
+                        contextMenu = true
+                        if (e.target.id === "button") {
+                            var menu = document.getElementById("contextMenu")      
+                            menu.style.display = 'block'; 
+                            menu.style.left = e.pageX + "px"; 
+                            menu.style.top = e.pageY + "px"; 
+                        } else if (e.target.id === "buttonNoClickBank") {
+                            var menu = document.getElementById("contextMenu2")      
+                            menu.style.display = 'block'; 
+                            menu.style.left = e.pageX + "px"; 
+                            menu.style.top = e.pageY + "px"; 
+                        }
+                    } 
+                 }
+             } 
+     </script>
+	</body>
+ 
+</html>

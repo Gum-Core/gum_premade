@@ -1,0 +1,347 @@
+<html>
+	<head>
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        </head>
+	<body>
+        <div id="container"> 
+                <div id=header>Character creator</div>
+                <div id="button_container">
+                        <div id="button2"><center>Basic config</center></div></br>
+                        <div id="button"><center><u>Nation category</u></u></center><br>
+                                <input type="range" min="1" max="6" value="1" class="slider" id="HeadCategory">
+                        </div></br>
+                       <div id="button"><center><u>Head texture</u></u></center><br>
+                                <input type="range" min="1" max="24" value="1" class="slider" id="HeadTexture">
+                        </div></br>
+                        <div id="button"><center><u>Body texture</u></u></center><br>
+                                <input type="range" min="1" max="5" value="1" class="slider" id="BodyTexture">
+                        </div></br>
+                        <div id="button"><center><u>Legs texture</u></u></center><br>
+                                <input type="range" min="1" max="5" value="1" class="slider" id="LegsTexture">
+                        </div></br>
+                        <div id="button"><center><u>Body type</u></u></center><br>
+                                <input type="range" min="1" max="6" value="1" class="slider" id="BodyType">
+                        </div></br>
+                        <div id="button"><center><u>Waist</u></u></center><br>
+                                <input type="range" min="1" max="21" value="1" class="slider" id="Waist">
+                        </div></br>
+                        <div id="button"><center><u>Scale</u></u></center><br>
+                                <input type="range" min="90" max="115" value="100" class="slider" id="Scale">
+                        </div></br></br></br>
+
+                        <div id="button2"><center>Edit faces</center></div></br>
+                        <div id="button"><center><u>Eyes</u></center><br>
+                                <input type="range" min="1" max="14" value="1" class="slider" id="EYES">
+                        </div></br>
+                        <div id="button"><center><u>Teeth</u></center><br>
+                                <input type="range" min="0" max="14" value="1" class="slider" id="TEETHS">
+                        </div></br>
+                        <div id="button"><center><u>Chin Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x3C0F">
+                        </div></br>
+                        <div id="button"><center><u>Chin Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xC3B2">
+                        </div></br>
+                        <div id="button"><center><u>Chin Down</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xE323">
+                        </div></br>
+                        <div id="button"><center><u>Jaw Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x8D0A">
+                        </div></br>
+                        <div id="button"><center><u>Jaw Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xEBAE">
+                        </div></br>
+                        <div id="button"><center><u>Jaw Down</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x1DF6">
+                        </div></br>
+                        <div id="button"><center><u>Upper Lip Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x1A00">
+                        </div></br>
+                        <div id="button"><center><u>Upper Lip Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x91C1">
+                        </div></br>
+                        <div id="button"><center><u>Upper Lip Down</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xC375">
+                        </div></br>
+                        <div id="button"><center><u>Lower Lip Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xBB4D">
+                        </div></br>
+                        <div id="button"><center><u>Lower Liph Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xB0B0">
+                        </div></br>
+                        <div id="button"><center><u>Lower Liph Down</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x5D16">
+                        </div></br>
+                        <div id="button"><center><u>Mouth Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xF065">
+                        </div></br>
+                        <div id="button"><center><u>Mouth Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xAA69">
+                        </div></br>
+                        <div id="button"><center><u>Mouth Axis X</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x7AC3">
+                        </div></br>
+                        <div id="button"><center><u>Mouth Axis Y</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x410D">
+                        </div></br>
+                        <div id="button"><center><u>Cheek Bones Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x6A0B">
+                        </div></br>
+                        <div id="button"><center><u>Cheek Bones Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xABCF">
+                        </div></br>
+                        <div id="button"><center><u>Cheek Bones Down</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x358D">
+                        </div></br>
+                        <div id="button"><center><u>Nose Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x6E7F">
+                        </div></br>
+                        <div id="button"><center><u>Nose Tip</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x3471">
+                        </div></br>
+                        <div id="button"><center><u>Nose Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x03F5">
+                        </div></br>
+                        <div id="button"><center><u>Ears Left</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xED30">
+                        </div></br>
+                        <div id="button"><center><u>Ears Down</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x2844">
+                        </div></br>
+                        <div id="button"><center><u>Ears Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xB6CE">
+                        </div></br>
+                        <div id="button"><center><u>Ears Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xC04F">
+                        </div></br>
+                        <div id="button"><center><u>Eye Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xDDFB">
+                        </div></br>
+                        <div id="button"><center><u>Eye Distance</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xA54E">
+                        </div></br>
+                        <div id="button"><center><u>Eye Angle</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xD266">
+                        </div></br>
+                        <div id="button"><center><u>Eye Down</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xEE44">
+                        </div></br>
+                        <div id="button"><center><u>Eyelid Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x1B6B">
+                        </div></br>
+                        <div id="button"><center><u>Eyelid Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x8B2B">
+                        </div></br>
+                        <div id="button"><center><u>Eyebrow Down</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x4AD1">
+                        </div></br>
+                        <div id="button"><center><u>Eyebrow Width</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x2FF9">
+                        </div></br>
+                        <div id="button"><center><u>Eyebrow Height</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x3303">
+                        </div></br>
+                        <div id="button"><center><u>Head Size</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x84D6">
+                        </div></br>
+                        <div id="button"><center><u>Nose Distance</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x561E">
+                        </div></br>
+                        <div id="button"><center><u>Nose C</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0xF156">
+                        </div></br>
+                        <div id="button"><center><u>Nose Angle</u></center><br>
+                                <input type="range" min="-20" max="20" value="0" class="slider" id="0x34B1">
+                        </div></br></br></br>
+
+
+                        <div id="button2"><center>Head Details</center></div></br>
+                        <div id="button"><center><u>Hair</u></center><br>
+                                <input type="range" min="0" max="0" value="0" class="slider" id="HAIRS">
+                        </div></br>
+                        <div id="button"><center><u>Beards</u></center><br>
+                                <input type="range" min="0" max="0" value="0" class="slider" id="BEARDS">
+                        </div></br>
+                        <div id="buttoncolor"><center><u>Beards stable</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="BEARDSSTABLE_OPACITY"> Opacity
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="BEARDSSTABLE_COLOR"> Color
+                        </div></br>
+                       
+                        <div id="buttoncolor"><center><u>Scars</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="SCARS_OPACITY"> Opacity
+                                <input type="range" min="1" max="16" value="1" class="slider2" id="SCARS_TYPE"> Type
+                         </div></br>
+
+                         <div id="buttoncolor"><center><u>Spots</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="SPOTS_OPACITY"> Opacity
+                                <input type="range" min="1" max="16" value="1" class="slider2" id="SPOTS_TYPE"> Type
+                         </div></br>
+
+                         <div id="buttoncolor"><center><u>Disc</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="DISC_OPACITY"> Opacity
+                                <input type="range" min="1" max="16" value="1" class="slider2" id="DISC_TYPE"> Type
+                         </div></br>
+
+                         <div id="buttoncolor"><center><u>Complex</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="COMPLEX_OPACITY"> Opacity
+                                <input type="range" min="1" max="13" value="1" class="slider2" id="COMPLEX_TYPE"> Type
+                         </div></br>
+
+                         <div id="buttoncolor"><center><u>Acne</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="ACNE_OPACITY"> Opacity
+                                <input type="range" min="1" max="1" value="1" class="slider2" id="ACNE_TYPE"> Type
+                         </div></br>
+
+                         <div id="buttoncolor"><center><u>Ageing</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="AGEING_OPACITY"> Opacity
+                                <input type="range" min="1" max="25" value="1" class="slider2" id="AGEING_TYPE"> Type
+                         </div></br>
+
+                         <div id="buttoncolor"><center><u>Freckles</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="FRECKLES_OPACITY"> Opacity
+                                <input type="range" min="1" max="15" value="1" class="slider2" id="FRECKLES_TYPE"> Type
+                         </div></br>
+
+                         <div id="buttoncolor"><center><u>Moles</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="MOLES_OPACITY"> Opacity
+                                <input type="range" min="1" max="16" value="1" class="slider2" id="MOLES_TYPE"> Type
+                         </div></br>
+
+                         <div id="buttoncolor"><center><u>Eye shadows</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="SHADOWS_OPACITY"> Opacity
+                                <input type="range" min="1" max="5" value="1" class="slider2" id="SHADOWS_TYPE"> Type 
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="SHADOWS_COLOR1"> Color 1
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="SHADOWS_COLOR2"> Color 2
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="SHADOWS_COLOR3"> Color 3
+                        </div></br>
+
+                        <div id="buttoncolor"><center><u>Eyebrows</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="EYEBROWS_OPACITY"> Opacity
+                                <input type="range" min="1" max="24" value="1" class="slider2" id="EYEBROWS_TYPE"> Type
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="EYEBROWS_COLOR1"> Color
+                        </div></br>
+
+                        <div id="buttoncolor"><center><u>Eyelinners</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="EYELINNERS_OPACITY"> Opacity
+                                <input type="range" min="1" max="7" value="1" class="slider2" id="EYELINNERS_TYPE"> Type 
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="EYELINNERS_COLOR1"> Color
+                          </div></br>
+
+                        <div id="buttoncolor"><center><u>Brush</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="BRUSH_OPACITY"> Opacity
+                                <input type="range" min="1" max="4" value="1" class="slider2" id="BRUSH_TYPE"> Type
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="BRUSH_COLOR1"> Color
+                        </div></br>
+
+                        <div id="buttoncolor"><center><u>Lipsticsk</u></center><br>
+                                <input type="range" min="0" max="10" value="0" class="slider2" id="LIPSTICKS_OPACITY"> Opacity
+                                <input type="range" min="1" max="7" value="1" class="slider2" id="LIPSTICKS_TYPE"> Type
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="LIPSTICKS_COLOR1"> Color 1
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="LIPSTICKS_COLOR2"> Color 2
+                                <input type="range" min="0" max="255" value="0" class="slider2" id="LIPSTICKS_COLOR3"> Color 3
+                        </div></br></br></br>
+
+                        <div id="button2"><center>Clothes</center></div></br>
+                        <div id="button"><center><u>Hats</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="HAT">
+                        </div></br>
+                        <div id="button"><center><u>Eyewears</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="EYEWEAR">
+                        </div></br>
+                        <div id="button"><center><u>Scarfs</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="SCARF">
+                        </div></br>
+                        <div id="button"><center><u>Masks</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="MASK">
+                        </div></br>
+                        <div id="button"><center><u>Neckties</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="NECKTIE">
+                        </div></br>
+                        <div id="button"><center><u>Shirts</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="SHIRT">
+                        </div></br>
+                        <div id="button"><center><u>Suspenders</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="SUSPENDER">
+                        </div></br>
+                        <div id="button"><center><u>Vests</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="VEST">
+                        </div></br>
+                        <div id="button"><center><u>Coats</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="COAT">
+                        </div></br>
+                        <div id="button"><center><u>Closed coats</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="CCOAT">
+                        </div></br>
+                        <div id="button"><center><u>Ponchos</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="PONCHO">
+                        </div></br>
+                        <div id="button"><center><u>Cloacks</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="CLOAK">
+                        </div></br>
+                        <div id="button"><center><u>Gloves</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="GLOVE">
+                        </div></br>
+                        <div id="button"><center><u>Right rings</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="RRING">
+                        </div></br>
+                        <div id="button"><center><u>Left rings</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="LRING">
+                        </div></br>
+                        <div id="button"><center><u>Bracelets</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="BRACELET">
+                        </div></br>
+                        <div id="button"><center><u>Gunbelts</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="GUNBELT">
+                        </div></br>
+                        <div id="button"><center><u>Gunbelt accesories</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="GUNBELTACS">
+                        </div></br>
+                        <div id="button"><center><u>Belts</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="BELT">
+                        </div></br>
+                        <div id="button"><center><u>Buckles</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="BUCKLE">
+                        </div></br>
+                        <div id="button"><center><u>Left holsters</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="LHOLSTER">
+                        </div></br>
+                        <div id="button"><center><u>Pants</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="PANT">
+                        </div></br>
+                        <div id="button"><center><u>Spats</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="SPAT">
+                        </div></br>
+                        <div id="button"><center><u>Skirts</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="SKIRT">
+                        </div></br>
+                        <div id="button"><center><u>Chaps</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="CHAP">
+                        </div></br>
+                        <div id="button"><center><u>Boots</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="BOOT">
+                        </div></br>
+                        <div id="button"><center><u>Spurs</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="SPUR">
+                        </div></br>
+                        <div id="button"><center><u>Gauntlets</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="GAUNTLET">
+                        </div></br>
+                        <div id="button"><center><u>Accesories</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="ACCESORIE">
+                        </div></br>
+                        <div id="button"><center><u>Satchels</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="SATCHEL">
+                        </div></br>
+                        <div id="button"><center><u>Loadouts</u></center><br>
+                                <input type="range" min="0" max="1" value="0" class="slider" id="LOADOUT">
+                        </div></br>
+                        <input id="firstname" placeholder="Write Firstname"><br>
+                        <input id="lastname" placeholder="Write Lastname"><br>
+                        <div id="save" onclick="save_character()"><center>Save your character</center></div></br>
+                </div>
+        </div>
+        <script src="./index.js" type="text/javascript"></script>
+
+	</body>
+</html>

@@ -1,0 +1,67 @@
+@font-face {
+    font-family: crock;
+    src: url(crock.ttf);
+}
+
+* {
+    font-family: crock;
+    box-sizing: inherit;
+    touch-action: manipulation;
+}
+
+body {
+    background: none !important;
+}
+.align-left {
+   text-align: left;
+   left: -15px;
+}
+
+#container {
+    display: block;
+    -webkit-user-drag: element;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 10%;
+    left: 11%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    min-height: 100px;
+    background-image: url(images/background.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition-duration: 2.0;
+}
+
+#title_text {
+    color: rgb(255, 255, 255);
+    font-family: crock;
+    font-size: 21px;
+    padding-top: 10px;
+    padding-left: 101px;
+}
+
+#text_system {
+    color: rgb(255, 255, 255);
+    font-family: crock;
+    font-size: 16px;
+    padding-left: 101px;
+}
+
+#iconimage {
+    position:absolute;
+    background-image: url(images/bread.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+    left: 50px;
+    top: 50px;
+    width: 70px;
+    height: 70px;
+}

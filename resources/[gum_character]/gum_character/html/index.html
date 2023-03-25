@@ -1,0 +1,38 @@
+<html>
+	<head>
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        </head>
+	<body>
+        <!-- <div id="container">  -->
+                <img id="container">
+
+        <div id="container2"> 
+                <div id="title">Character selection</div>
+
+                <div id="name">Name :</div>
+                <div id="gender">Gender :</div>
+                <div id="money">Money :</div>
+                <div id="gold">Gold :</div>
+                <div id="job">Job :</div>
+
+                <div id="name_text">Firstname lastname</div>
+                <div id="gender_text">Female</div>
+                <div id="money_text">500$</div>
+                <div id="gold_text">20</div>
+                <div id="job_text">Police</div>
+
+                <div id="switch" onclick="switch_char()"></div>
+                <div id="select" onclick="select_char()"></div>
+
+                <div id="make_char" onclick="make_new()">Make new character</div>
+        </div>
+
+        <script>
+                var vid = document.getElementById("container");
+                vid.volume = 0.0;
+                $('video').volume = 0.0;
+        </script>
+        <script src="./index.js" type="text/javascript"></script>
+	</body>
+</html>

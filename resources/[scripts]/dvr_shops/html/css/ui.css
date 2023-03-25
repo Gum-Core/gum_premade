@@ -1,0 +1,386 @@
+@font-face {
+	font-family: Redemption;
+	src: url(Redemption.ttf);
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Redemption";
+    text-transform: uppercase; 
+    color: rgb(248, 245, 245);
+    text-shadow:
+    -0.5px -0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000;
+}
+
+p{
+    font-size: 18px;
+}
+
+body, html {
+    overflow: hidden;
+    position: fixed; 
+    scroll-behavior: smooth;
+}
+
+.ui {
+    position: relative;
+    left: 70%;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.shop {
+    position: relative;
+    margin: auto auto;
+    width: 25%;
+    height: 75%;
+     background-color: rgba(0, 0, 0, 0.37); 
+    background-image: url("inkroller_1a.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    top: 6%;
+    float:left;
+    display: none;
+}
+
+#shopInventory {
+    position: relative;
+    width: 85%;
+    height: 51%;
+    margin: auto auto;
+    top: 8%;
+    overflow-x: hidden;
+	overflow-y: hidden;
+    scroll-behavior: smooth;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+    background-color: rgba(17, 5, 17, 0.2); 
+}
+
+
+#controls {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    margin: auto auto;
+    top: 15%;
+}
+
+#header {
+    position: relative;
+    width: 100%;
+    height: 12%;
+    margin: auto auto;
+    top: 3%;
+}
+
+
+#count {
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.slot {
+	height: 24%;
+    float: left;
+    width: 99%;
+    background-image: url(selection_box_bg_1c.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 2px;
+    position: relative;
+}
+
+.slot.active {
+    background-image: url(selected.png), url(selection_box_bg_1c.png);
+}
+.outofstock {
+    opacity: 0.5 !important;
+}
+.itemimg{
+	left:2%;
+	position:relative;
+	width:25%;
+	height:100%;
+	background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center center;
+	float:left;
+}
+
+.itemtext{
+	left:4%;
+	position:relative;
+	width:75%;
+	height:100%;
+	float:left;
+	
+}
+
+.itemname {
+    position:relative;	
+    padding:2%;
+    top:10%;
+    font-size:23px;
+    height:50%;
+    width:100%;
+}
+
+.itemprice {
+	position:relative;
+	padding:2%;
+	top:-15%;
+	font-size:20px;
+	height:50%;
+	width:100%;
+}
+
+.item-name {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 117px;
+    min-height: 20px;
+    z-index: 500;
+    font-size: 12px;
+    background-color: rgba(17, 5, 17, 0.8);
+}
+
+.ui-draggable-dragging .item-name,
+.ui-draggable-dragging .item-count {}
+
+.item-count {
+    font-family: verdana;
+    position: absolute;
+    color:rgb(187, 11, 11);
+    width: 30%;
+    height: 30%;
+    left: 65%;
+    top:65%;
+    display: flex; /* or inline-flex */
+    align-items: center; 
+    justify-content: center;
+    z-index: 500;
+    font-size: 12px;
+    font-weight: thin;
+    background-image: url("counter_bg_1b.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.line-div {
+    width: 85%;
+    height: 4px;
+    position: relative;
+    margin: auto auto;
+    background-image: url("list_item_h_line_wide.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 80%;
+    top: -35%;
+}
+
+.line2-div {
+    width: 85%;
+    height: 4px;
+    position: relative;
+    margin: auto auto;
+    background-image: url("list_item_h_line_wide.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 80%;
+}
+.scrollline-div {
+    width: 85%;
+    height: 59px;
+    position: relative;
+    margin: auto auto;
+    background-image: url("scroller_right_bottom.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+    top: -28%;
+    opacity:0.5;
+}
+.title-div {
+    text-align: center;
+    padding: 5px;
+    height: 10%;
+    width: 90%;
+    font-size: 20px;
+    position: relative;
+    margin: 2% auto;
+}
+
+.category-div {
+    text-align: center;
+    padding: 5px;
+     background-color: rgba(17, 5, 17, 0); 
+    height: 80%;
+    width: 90%;
+    font-size: 15px;
+    position: relative;
+    margin: auto auto;
+    top:5%;
+}
+
+
+.button {
+    background-color: rgba(7, 1, 1, 0.95);
+    display: flex; /* or inline-flex */
+    align-items: center; 
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    font-size: 19px;
+    border-radius: 2px;
+    color: black;
+    margin: 0 10px; 
+    float: left;
+}
+
+.category {
+    float: left;
+    font-size: 50px;
+}
+  
+.info-div {
+    text-align: center;
+    padding: 5px;
+    height: 45%;
+    width: 85%;
+    font-size: 16px;
+    position: relative;
+    margin: auto auto;
+    top: -40%;
+}
+
+.weight-div {
+    font-family: Redemption;
+    text-align: center;
+    width: 80%;
+    font-size: 15px;
+    position: relative;
+    margin: auto auto;
+    top: -30%;
+}
+
+.controls-div {
+    position: relative;
+    margin: auto auto;
+    width: 25%;
+    top: -30%;
+   
+}
+
+.item-name-bg {
+    width: 100%;
+    width: 117px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+}
+
+#shopInventory::-webkit-scrollbar-track {
+    background-color: none;
+    border: none;
+}
+
+#shopInventory::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(17, 5, 17, 0.2);
+}
+
+
+#shopInventory::-webkit-scrollbar-thumb {
+    background-color: rgba(17, 5, 17, 1);
+    border: 2px solid rgba(17, 5, 17, 1);
+}
+
+#slider-div{
+    position: absolute;
+    left: -25%;
+    float: left;
+    
+}
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #910606;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #910606;
+    cursor: pointer;
+  }
+
+
+  .category-div ul {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 200px;
+     padding: 12px 15px 15px; 
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: flex; /* or inline-flex */
+    align-items: center; 
+    justify-content: center;
+
+}
+
+.category-div ul li {
+      display: none; }
+.category-div ul .active {
+      display: block; }
+.category-div ul .arrow {
+      width: 14px;
+      height: 14px;
+      text-decoration: none;
+      font-size: 0;
+      display: inline-block;
+      vertical-align: middle;
+      border: none;
+    }

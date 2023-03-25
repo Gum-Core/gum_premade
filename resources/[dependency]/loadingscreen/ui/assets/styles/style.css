@@ -1,0 +1,67 @@
+@font-face {
+  font-family: rdr;
+  src: url(../fonts/rdrlino-regular-webfont.woff);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+#app {
+  font-family: rdr;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color);
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.elapsed {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+}
+
+.skip {
+  font-size: 30px;
+  color: white;
+  vertical-align: middle;
+  width: 80%;
+  opacity: 0.7;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.background {
+  background-color: var(--backgroundcolor);
+  background-size: cover;
+  background-image: var(--backgroundimage);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.wrapper {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  z-index: 999999;
+}

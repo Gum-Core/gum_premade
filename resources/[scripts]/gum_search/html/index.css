@@ -1,0 +1,106 @@
+@font-face {
+    font-family: crock;
+    src: url(crock.ttf);
+}
+
+* {
+    font-family: crock;
+    box-sizing: inherit;
+    touch-action: manipulation;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(73, 73, 73); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b3b3b3; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: rgb(39, 39, 39); 
+}
+
+#container {
+    -webkit-user-drag: none;
+     user-select: none;
+     -moz-user-select: none;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     display: block;
+     padding: 25px;
+     color: rgb(255, 255, 255);
+     position: absolute;
+     font-size: 17px;
+     top: 50%;
+     left: 12%;
+     transform: translate(-50%, -50%);
+     width: 20%;
+     height: 30%;
+     background-image: url('itemlist.png');
+     background-size: 100% 100%;
+     animation: fadeIn;
+     animation-duration: 0.5s;
+}
+
+#itemInformation {
+    overflow-x: auto;
+    position: absolute;
+    display: grid;
+    top: 5%;
+    left: 6%;
+    width: 87%;
+    height: 85%;
+    grid-template-columns: repeat(7, 14.3%);
+    grid-auto-rows: 16.6%;
+    background-color: transparent;
+}
+
+.buttonItem {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 85.5%;
+    height: 90%;
+    background-image: url('item.png');
+    background-size: 100% 100%;
+    transition: 0.1s;
+    background-color: rgba(39, 39, 39, 0.301);
+}
+
+.buttonItem:hover {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 85.5%;
+    height: 90%;
+    background-image: url('item.png');
+    background-size: 100% 100%;
+    transition: 0.1s;
+    background-color: rgba(85, 3, 3, 0.164);
+}
+
+#text {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    color : white;
+    font-size: 0.5vw;
+    text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+}
+
+#itemLabel {
+    position: absolute;
+    top: 92%;
+    left: 7%;
+    width: 85%;
+    height: 7%;
+    font-size: 0.8vw;
+    color:white;
+}

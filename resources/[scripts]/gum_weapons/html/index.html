@@ -1,0 +1,30 @@
+<html>
+	<head>
+        <link rel="stylesheet" href="index.css" type="text/css">
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        </head>
+	<body>
+                <div id="container">
+                        <h2 id="header" style="text-align:center">Weapon customization</h2>
+                        <div id="pay_weapos" onclick="buy_components()"></div>
+        
+                        <div id="component_for_buy">Cena</div>
+                        <div id="shared_table" class="grid-container">
+                        </div>
+                </div>
+                <div id="container_buying">
+                        <h2 id="header" style="text-align:center">Weapon store</h2>
+  
+                        <div id="weapon_table" class="wep_grid-container">
+                        </div>
+                        <div id="ammo_table" class="wep_grid-container">
+                        </div>
+                        <div id="weapon_for_buy">Price</div>
+                        <div id="buy_weapon" onclick="buy_weapon()"></div>
+                        <div id="buy_ammo" onclick="buy_ammo()"></div>
+                        <div id="weapon_store" onclick="switch_to_weapon()"></div>
+                        <div id="ammo_store" onclick="switch_to_ammo()"></div>
+                </div>
+        <script src="./index.js" type="text/javascript"></script>
+	</body>
+</html>

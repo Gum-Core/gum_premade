@@ -1,0 +1,285 @@
+@font-face {
+    font-family: crock;
+    src: url(crock.ttf);
+}
+
+* {
+    font-family: crock;
+    box-sizing: inherit;
+    touch-action: manipulation;
+}
+
+body {
+    background: none !important;
+}
+div {
+    padding-left: 5%;
+    height: 78%;
+}
+table {
+    width: 100%;
+  }
+
+::-webkit-scrollbar {
+    width: 6px;
+  }
+::-webkit-scrollbar-track {
+    background: rgb(73, 73, 73); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #b3b3b3; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: rgb(39, 39, 39); 
+  }
+
+.align-left {
+    text-align: left;
+    left: -15px;
+}
+
+#container {
+    -webkit-user-drag: element;
+    display: block;
+    padding: 25px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 500px;
+    height: 120px;
+    background-image: url('images/background.png');
+    background-size: 100% 100%;
+}
+#container2 {
+    -webkit-user-drag: element;
+    display: block;
+    padding: 25px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    width: 500px;
+    height: 80px;
+    background-image: url('images/background2.png');
+    background-size: 100% 100%;
+}
+
+input {
+    position: absolute;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    text-align: center;
+    font-size: 19px;
+    top: 73px;
+    left: 80px;
+    width: 380px;
+    background-color: transparent;
+    color: #d8d8d8;
+}
+input:hover {
+    position: absolute;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    text-align: center;
+    font-size: 19px;
+    top: 73px;
+    left: 80px;
+    width: 380px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#button_1 {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 19px;
+    width: 100;
+    height: 13px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    bottom: 20px;
+    right: 100px;
+    padding: 14px 28px;
+    display: inline-block;
+}
+#button_1:hover {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 19px;
+    width: 100;
+    height: 13px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/sbutton.png');
+    background-size: 100% 100%;
+    bottom: 20px;
+    right: 100px;
+    padding: 14px 28px;
+    display: inline-block;
+    color:white;
+}
+
+
+#button_2 {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 19px;
+    width: 100;
+    height: 13px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    bottom: 20px;
+    left: 100px;
+    padding: 14px 28px;
+    text-align: center;
+}
+#button_2:hover {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 19px;
+    width: 100;
+    height: 13px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/sbutton.png');
+    background-size: 100% 100%;
+    bottom: 20px;
+    left: 100px;
+    padding: 14px 28px;
+    display: inline-block;
+    color:white;
+}
+
+#button_1_ans {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 19px;
+    width: 100;
+    height: 13px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    bottom: 20px;
+    right: 100px;
+    padding: 14px 28px;
+    display: inline-block;
+}
+#button_1_ans:hover {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 19px;
+    width: 100;
+    height: 13px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/sbutton.png');
+    background-size: 100% 100%;
+    bottom: 20px;
+    right: 100px;
+    padding: 14px 28px;
+    display: inline-block;
+    color:white;
+}
+#button_2_ans {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 19px;
+    width: 100;
+    height: 13px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    bottom: 20px;
+    left: 100px;
+    padding: 14px 28px;
+    text-align: center;
+}
+#button_2_ans:hover {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 19px;
+    width: 100;
+    height: 13px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/sbutton.png');
+    background-size: 100% 100%;
+    bottom: 20px;
+    left: 100px;
+    padding: 14px 28px;
+    display: inline-block;
+    color:white;
+}
+#header {
+    position: absolute;
+    color: rgb(240, 240, 240);
+    text-align: center;
+    font-size: 19px;
+    width: 500px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    top: 27px;
+    left: 0px;
+}
+
+#header2 {
+    position: absolute;
+    color: rgb(240, 240, 240);
+    text-align: center;
+    font-size: 19px;
+    width: 500px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    top: 20px;
+    left: 0px;
+}

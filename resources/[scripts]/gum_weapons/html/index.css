@@ -1,0 +1,523 @@
+@font-face {
+    font-family: crock;
+    src: url(crock.ttf);
+}
+
+* {
+    font-family: crock;
+    box-sizing: inherit;
+    touch-action: manipulation;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(73, 73, 73); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b3b3b3; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: rgb(39, 39, 39); 
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 13px;
+}
+
+#container {
+    -webkit-user-drag: none;
+     user-select: none;
+     -moz-user-select: none;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     display: block;
+     padding: 25px;
+     color: rgb(255, 255, 255);
+     position: absolute;
+     top: 50%;
+     left: 13%;
+     transform: translate(-50%, -50%);
+     width: 380px;
+     max-width: 381px;
+     height: 590px;
+     max-height: 591px;
+     background-image: url('images/background.png');
+     background-size: 100% 100%;
+ }
+ #container_buying {
+    -webkit-user-drag: none;
+     user-select: none;
+     -moz-user-select: none;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     display: block;
+     padding: 25px;
+     color: rgb(255, 255, 255);
+     position: absolute;
+     top: 50%;
+     left: 13%;
+     transform: translate(-50%, -50%);
+     width: 380px;
+     max-width: 381px;
+     height: 590px;
+     max-height: 591px;
+     background-image: url('images/background.png');
+     background-size: 100% 100%;
+ }
+  
+.show {
+    display: block;
+}
+
+#weapon_for_buy {
+    position: absolute;
+    color: rgb(228, 228, 228);
+    text-align:center;
+    font-size: 16px;
+    line-height: 25px;
+    width: 260px;
+    height: 50px;
+    top: 565px;
+    left: 40px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+
+#component_for_buy {
+    position: absolute;
+    color: rgb(228, 228, 228);
+    text-align:center;
+    font-size: 16px;
+    line-height: 25px;
+    width: 260px;
+    height: 50px;
+    top: 565px;
+    left: 40px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+
+#ammo_store {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    top: 137px;
+    right: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/ammo_image.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+#weapon_store {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    top: 137px;
+    right: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/weapon_image.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+
+#pay_weapos {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    top: 565px;
+    right: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/cash.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+#pay_weapos:hover {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    top: 565px;
+    right: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/acash.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+
+#buy_weapon {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    top: 565px;
+    right: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/cash.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+#buy_weapon:hover {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    top: 565px;
+    right: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/acash.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+
+#buy_ammo {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    top: 565px;
+    right: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/cash.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+#buy_ammo:hover {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    text-align: center;
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+    top: 565px;
+    right: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/acash.png');
+    background-size: 100% 100%;
+    transition-duration: 0.2s;
+}
+
+
+.grid-container {
+    overflow-y: scroll;
+    position: absolute;
+    width: 350px;
+	max-width: 350px;
+	max-height: 420px;
+	top: 140px;
+	left: 40px;
+}
+.wep_grid-container {
+    overflow-y: scroll;
+    position: absolute;
+    width: 350px;
+	max-width: 350px;
+	max-height: 380px;
+	top: 170px;
+	left: 40px;
+}
+
+
+.grid-item {
+    line-height: 42px;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    width: 98%;
+    height: 38px;
+    color:rgb(172, 172, 172);
+    font-size: 14px;
+    padding-left: 5px;
+}
+#img {
+    position:relative;
+    left:0px;
+    top:0px;
+}
+#selectMe {
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    width: 32px;
+    height: 32px;
+    color:rgb(172, 172, 172);
+    font-size: 12px;
+    padding-left: 5px;
+
+}
+#selectMe:hover {
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    width: 32px;
+    height: 32px;
+    color:rgb(235, 235, 235);
+    font-size: 12px;
+    padding-left: 5px;
+}
+#text {
+    position:relative;
+    left:10px;
+    top:5px;
+    width: 300px;
+}
+.grid-item2 {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    line-height: 10px;
+    display: grid;
+    grid-template-columns: repeat(8, 40px);
+    grid-template-rows: repeat(30, 40px);
+    left: 10px;
+    width: 95%;
+    height: 40px;
+    color:rgb(243, 243, 243);
+    background-color:rgb(51, 51, 51);
+    border-color: rgb(63, 0, 0);
+    border-style: inset;
+    font-size: 20px;
+    padding:5px;
+    transition-duration: 0.2s;
+}
+
+
+.grid-item:hover {
+    overflow: hidden;
+    background-image: url('images/sbutton.png');
+    background-size: 100% 100%;
+    color:rgb(255, 255, 255);
+    width: 95%;
+    height: 38px;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+
+
+
+
+.wep_grid-item {
+    line-height: 42px;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/button.png');
+    background-size: 100% 100%;
+    width: 98%;
+    height: 38px;
+    color:rgb(172, 172, 172);
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.wep_grid-item2 {
+    line-height: 5px;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/sbutton.png');
+    background-size: 100% 100%;
+    width: 98%;
+    height: 20px;
+    color:rgb(243, 243, 243);
+    font-size: 18px;
+    padding-top: 12px;
+    text-align: center;
+}
+
+.wep_grid-item:hover {
+    border: none;
+    overflow: hidden;
+    outline: none;
+    background-image: url('images/sbutton.png');
+    background-size: 100% 100%;
+    color:rgb(255, 255, 255);
+    width: 98%;
+    height: 38px;
+    font-size: 14px;
+    padding-left: 5px;
+}
+.input_value {
+    position: absolute;
+    right: 25px;
+    width: 20px;
+    height: 20px;
+}
+.input_value2 {
+    position: absolute;
+    right: 25px;
+    width: 20px;
+    height: 20px;
+}
+#left {
+    position: absolute;
+    background-image: url('images/l_arrow.png');
+    background-size: 100% 100%;
+    right: 50px;
+    width: 15px;
+    height: 35px;
+    opacity: 0.7;
+}
+#right {
+    position: absolute;
+    background-image: url('images/r_arrow.png');
+    background-size: 100% 100%;
+    right: 10px;
+    width: 15px;
+    height: 35px;
+    opacity: 0.7;
+}
+
+.wep_input_value {
+    position: absolute;
+    left: 20px;
+    width: 300px;
+    height: 20px;
+    font-size: 17px;
+}
+#left:hover {
+    position: absolute;
+    background-image: url('images/al_arrow.png');
+    background-size: 100% 100%;
+    right: 50px;
+    width: 15px;
+    height: 35px;
+    opacity: 0.9;
+}
+
+#right:hover {
+    position: absolute;
+    background-image: url('images/ar_arrow.png');
+    background-size: 100% 100%;
+    right: 10px;
+    width: 15px;
+    height: 35px;
+    opacity: 0.9;
+}
+
+#wep_right {
+    position: absolute;
+    background-image: url('images/r_arrow.png');
+    background-size: 100% 100%;
+    right: 10px;
+    width: 25px;
+    height: 37px;
+    opacity: 0.7;
+}
+
+
+#wep_left:hover {
+    position: absolute;
+    background-image: url('images/al_arrow.png');
+    background-size: 100% 100%;
+    right: 50px;
+    width: 25px;
+    height: 37px;
+    opacity: 0.9;
+}
+
+#wep_right:hover {
+    position: absolute;
+    background-image: url('images/ar_arrow.png');
+    background-size: 100% 100%;
+    right: 10px;
+    width: 25px;
+    height: 37px;
+    opacity: 0.9;
+}
+
+h2 {
+    color: rgb(233, 233, 233);
+    font-family: crock;
+    text-align: center;
+    position: fixed;
+    font-size: 32px;
+    margin-top: 0.13em;
+    margin-bottom: 0.83em;
+    margin-left: 0.50em;
+    margin-right: 0;
+
+    padding-top: 25px;
+
+    width: 80%;
+    height: 10%;
+    background-image: url('images/title.png');
+    background-size: 100% 100%;
+}
+

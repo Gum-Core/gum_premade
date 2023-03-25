@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/loaders.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrapper" :style="cssvars" :class="{'background': config.image.active}" v-if="visible">
+        <video id="videocomp" v-if="config.video.active" width="320" height="240" :controls="false" autoplay playsinline :muted="config.video.mute" :loop="config.video.looped" >
+          <source :src="config.video.source" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div v-if="config.youtube.active">
+          <div id="ytplayer"></div>
+        </div>
+
+        <div class="elapsed" v-if="config.timeelapsed">{{elapsedtime}}</div>
+        <div class="skip" v-if="config.loadtime.skip && loading == false">{{ config.loadtime.lang }} </div>
+        <div class="loader1"  v-if="config.loading.icon == 'linedots' && config.loading.active">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="loader3"  v-if="config.loading.icon == 'fadedots' && config.loading.active">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="loader4"  v-if="config.loading.icon == 'circle' && config.loading.active"></div>
+        <div class="load-1" v-if="config.loading.icon == 'bars' && config.loading.active">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="load-2" v-if="config.loading.icon == 'circlelong' && config.loading.active">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="load-3" v-if="config.loading.icon == 'circledance' && config.loading.active">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <div class="load-4" v-if="config.loading.icon == 'wheel' && config.loading.active">
+          <div class="ring-1"></div>
+        </div>
+        <div class="load-5" v-if="config.loading.icon == 'orbit' && config.loading.active">
+          <div class="ring-2">
+            <div class="ball-holder">
+              <div class="ball"></div>
+            </div>
+          </div>
+        </div>
+        <div class="load-7" v-if="config.loading.icon == 'rolling' && config.loading.active">
+          <div class="square-holder">
+            <div class="square"></div>
+          </div>
+        </div>
+        <div class="load-8" v-if="config.loading.icon == 'elongate' && config.loading.active">
+          <div class="line"></div>
+        </div>
+        <div class="load-9" v-if="config.loading.icon == 'circlefan' && config.loading.active">
+          <div class="spinner">
+            <div class="bubble-1"></div>
+            <div class="bubble-2"></div>
+          </div>
+        </div>
+        <div class="load-wrapp" v-if="config.loading.icon == 'shift' && config.loading.active">
+          <div class="load-10">
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper" :style="cssvars" v-if="config.audio.active && visible">
+        <audio autoplay id="audiocomp">
+          <source :src="config.audio.source" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- Import your JS and JS Vendor (vue.js) -->
+<script src="../config.js"></script>
+<script src="vendor/vue.js"></script>
+<script src="app.js"></script>

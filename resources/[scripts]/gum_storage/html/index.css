@@ -1,0 +1,266 @@
+@font-face {
+    font-family: crock;
+    src: url(crock.ttf);
+}
+
+* {
+    font-family: crock;
+    box-sizing: inherit;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#storageManage {
+    overflow-y: hidden;
+    -webkit-user-drag: none;
+     user-select: none;
+     -moz-user-select: none;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     display: block;
+     padding: 25px;
+     color: rgb(255, 255, 255);
+     position: absolute;
+     top: 50%;
+     left: 12%;
+     transform: translate(-50%, -50%);
+     width: 375px;
+     max-width: 376px;
+     height: 210px;
+     max-height: 211px;
+     background-image: url('itemlist.png');
+     background-size: 100% 100%;
+     animation: fadeIn;
+     animation-duration: 0.5s;
+}
+#bankManage {
+    overflow-y: hidden;
+    -webkit-user-drag: none;
+     user-select: none;
+     -moz-user-select: none;
+     -webkit-user-select: none;
+     -ms-user-select: none;
+     display: block;
+     padding: 25px;
+     color: rgb(255, 255, 255);
+     position: absolute;
+     top: 50%;
+     left: 12%;
+     transform: translate(-50%, -50%);
+     width: 375px;
+     max-width: 376px;
+     height: 210px;
+     max-height: 211px;
+     background-image: url('itemlist.png');
+     background-size: 100% 100%;
+     animation: fadeIn;
+     animation-duration: 0.5s;
+}
+.gridBankManage {
+    margin: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+	max-width: 460px;
+	height: 200px;
+	max-height: 200px;
+	top: 5px;
+    font-size: 20px;
+    animation: fadeIn;
+    animation-duration: 0.4s;
+} 
+.gridManage {
+    margin: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+	max-width: 460px;
+	height: 200px;
+	max-height: 200px;
+	top: 5px;
+    font-size: 20px;
+    animation: fadeIn;
+    animation-duration: 0.4s;
+} 
+#buttonNw {
+    transition-duration: 0.2s;
+    color: rgb(172, 172, 172);
+    background-color: rgba(73, 73, 73,0.5);
+    border: 4px inset  rgba(73, 73, 73,0.5);
+    border-radius: 4px;
+    font-size:18px;
+    height: 30px;
+    width: 330px;
+}
+#buttonNw:hover {
+    transition-duration: 0.2s;
+    color: rgb(240, 240, 240);
+    background-color: rgba(73, 73, 73, 0.8);
+    border: 3px ridge rgba(153,153,153,0.5);
+    font-size:18px;
+    border: 4px inset #A40A0A;
+    border-radius: 4px;
+}
+#button {
+    transition-duration: 0.2s;
+    color: rgb(172, 172, 172);
+    background-color: rgba(73, 73, 73,0.5);
+    border: 4px inset  rgba(73, 73, 73,0.5);
+    border-radius: 4px;
+    font-size:18px;
+    height: 45px;
+    width: 330px;
+}
+#button:hover {
+    transition-duration: 0.2s;
+    color: rgb(240, 240, 240);
+    background-color: rgba(73, 73, 73, 0.8);
+    border: 3px ridge rgba(153,153,153,0.5);
+    font-size:18px;
+    border: 4px inset #A40A0A;
+    border-radius: 4px;
+}
+
+
+#buttonNoClickBank {
+    transition-duration: 0.2s;
+    color: rgb(172, 172, 172);
+    background-color: rgba(73, 73, 73,0.5);
+    border: 4px inset  rgba(73, 73, 73,0.5);
+    border-radius: 4px;
+    font-size:18px;
+    height: 60px;
+    width: 330px;
+}
+#buttonNoClickBank:hover {
+    transition-duration: 0.2s;
+    color: rgb(240, 240, 240);
+    background-color: rgba(73, 73, 73, 0.8);
+    border: 3px ridge rgba(153,153,153,0.5);
+    font-size:18px;
+    border: 4px inset #A40A0A;
+    border-radius: 4px;
+}
+
+#buttonNoClickBankNo {
+    transition-duration: 0.2s;
+    color: rgb(172, 172, 172);
+    background-color: rgba(73, 73, 73,0.5);
+    border: 4px inset  rgba(73, 73, 73,0.5);
+    border-radius: 4px;
+    font-size:18px;
+    height: 60px;
+    width: 330px;
+}
+#buttonNoClickBankNo:hover {
+    transition-duration: 0.2s;
+    color: rgb(240, 240, 240);
+    background-color: rgba(73, 73, 73, 0.8);
+    border: 3px ridge rgba(153,153,153,0.5);
+    font-size:18px;
+    border: 4px inset #A40A0A;
+    border-radius: 4px;
+}
+
+#buttonNoClick {
+    transition-duration: 0.2s;
+    color: rgb(172, 172, 172);
+    background-color: rgba(73, 73, 73,0.5);
+    border: 4px inset  rgba(73, 73, 73,0.5);
+    border-radius: 4px;
+    font-size:18px;
+    height: 50px;
+    width: 330px;
+}
+#buttonNoClick:hover {
+    transition-duration: 0.2s;
+    color: rgb(240, 240, 240);
+    background-color: rgba(73, 73, 73, 0.8);
+    border: 3px ridge rgba(153,153,153,0.5);
+    font-size:18px;
+    border: 4px inset #A40A0A;
+    border-radius: 4px;
+}
+#leftTextPosition {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+}
+#rightTextPosition {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 11px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(73, 73, 73); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b3b3b3; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: rgb(39, 39, 39); 
+}
+
+ul {
+    list-style: none;
+  }
+  .context-menu { 
+    position: absolute; 
+    
+  } 
+  .menu {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(15, 15, 15);
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgb(64 64 64 / 5%);
+    padding: 10px 0;
+  }
+  .menu > li > a {
+    font: inherit;
+    border: 0;
+    padding: 10px 30px 10px 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: unset;
+    color:white;
+    font-weight: 500;
+    transition: 0.2s linear;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+  }
+  .menu > li > a:hover {
+    color: #ff0000;
+  }
+  .menu > li > a > i {
+    padding-right: 10px;
+  }
+  .menu > li.trash > a:hover {
+    color: red;
+  }

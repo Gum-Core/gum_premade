@@ -1,0 +1,302 @@
+<!-- Bismillah YBM -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="index.css" type="text/css">
+
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/muuri/0.5.3/muuri.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        div.contextmenu {
+          color: black;
+        }
+        </style>
+</head>
+
+<body>
+  <div class="hotbar" id="hotbar">
+    <div id="slot0"><div class="top-right">+</div></div>
+    <div id="slot1" onclick="clear_hotbar(1)"><div class="top-right">2</div></div>
+    <div id="slot2" onclick="clear_hotbar(2)"><div class="top-right">3</div></div>
+    <div id="slot3" onclick="clear_hotbar(3)"><div class="top-right">4</div></div>
+    <div id="slot4" onclick="clear_hotbar(4)"><div class="top-right">5</div></div>
+    <div id="slot5"  onclick="clear_hotbar(5)"><div class="top-right">6</div></div>
+  </div>
+  <div id="container">
+    <div class="scrollline-div"></div>
+      <h2 id="header" style="text-align:center"></h2>
+      </br>
+      </br>
+      <div id ="id03"></div>
+      <div id ="id04"></div>
+      <div id ="id07"></div>
+      <div id="show_weapons" onclick="Show_Weap()"></div>
+      <div class="line-div"></div>
+      <div id ="btn_1" onmouseover="show_clothe(1)" onmouseout="clean_clothe()" onclick="put_clothe(1)"></div>
+      <div id ="btn_2" onmouseover="show_clothe(2)" onmouseout="clean_clothe()" onclick="put_clothe(2)"></div>
+      <div id ="btn_3" onmouseover="show_clothe(3)" onmouseout="clean_clothe()" onclick="put_clothe(3)"></div>
+      <div id ="btn_4" onmouseover="show_clothe(4)" onmouseout="clean_clothe()" onclick="put_clothe(4)"></div>
+      <div id ="btn_5" onmouseover="show_clothe(5)" onmouseout="clean_clothe()" onclick="put_clothe(5)"></div>
+      <div id ="btn_6" onmouseover="show_clothe(6)" onmouseout="clean_clothe()" onclick="put_clothe(6)"></div>
+      <div id ="btn_7" onmouseover="show_clothe(7)" onmouseout="clean_clothe()" onclick="put_clothe(7)"></div>
+      <div id ="btn_8" onmouseover="show_clothe(8)" onmouseout="clean_clothe()" onclick="put_clothe(8)"></div>
+      <div id ="btn_9" onmouseover="show_clothe(9)" onmouseout="clean_clothe()" onclick="put_clothe(9)"></div>
+      <div id ="btn_10" onmouseover="show_clothe(10)" onmouseout="clean_clothe()" onclick="put_clothe(10)"></div>
+      <div id ="btn_11" onmouseover="show_clothe(11)" onmouseout="clean_clothe()" onclick="put_clothe(11)"></div>
+      <div id ="btn_12" onmouseover="show_clothe(12)" onmouseout="clean_clothe()" onclick="put_clothe(12)"></div>
+      <div id ="btn_13" onmouseover="show_clothe(13)" onmouseout="clean_clothe()" onclick="put_clothe(13)"></div>
+      <div id ="btn_14" onmouseover="show_clothe(14)" onmouseout="clean_clothe()" onclick="put_clothe(14)"></div>
+      <div id ="btn_15" onmouseover="show_clothe(15)" onmouseout="clean_clothe()" onclick="put_clothe(15)"></div>
+      <div id ="btn_16" onmouseover="show_clothe(16)" onmouseout="clean_clothe()" onclick="put_clothe(16)"></div>
+      <div id ="btn_17" onmouseover="show_clothe(17)" onmouseout="clean_clothe()" onclick="put_clothe(17)"></div>
+      <div id ="btn_18" onmouseover="show_clothe(18)" onmouseout="clean_clothe()" onclick="put_clothe(18)"></div>
+    <table class="grid0" id="tableData">
+    </table>
+      <div id ="id01"></div>
+      <div id ="id02"></div>
+      <div id ="show_weapons" onclick="Show_Weap()"></div>
+      <div id ="show_skills" onclick="showSkills()"></div>
+      <div id ="filterAllItem" onclick="filterAllItem()"></div>
+      <div id ="filterAllEat" onclick="filterAllEat()"></div>
+      <div id ="filterAllDrink" onclick="filterAllDrink()"></div>
+      <div id ="filterAllHerb" onclick="filterAllHerb()"></div>
+      <div id ="filterAllCraft" onclick="filterAllCraft()"></div>
+      <div id ="filterAllValuable" onclick="filterAllValuable()"></div>
+      <div id ="filterAllHorse" onclick="filterAllHorse()"></div>
+      <div id ="filterAllBuild" onclick="filterAllBuild()"></div>
+      <div id ="filterAllTrash" onclick="filterAllTrash()"></div>
+      <input id="eatFilter" type="text" onchange="filterAllEat()"/>
+    </div>
+
+  <div id="container_other">
+    <h2 id="header_container" style="text-align:center">Stockage</h2>
+    <input id="myInput" type="text" onchange="filterTextInput()"/>
+
+    <div id ="id03"></div>
+    <div class="grid_other" id="expand_container">
+    </div>
+    <div id ="id05"></div>
+    <div id ="id08"></div>
+  </div>
+
+    <div class="grid2" id="playerData">
+    </div>
+    <div id="context-menu">
+      <div class="content_button" onclick="transferItem()"><center>Donner</center></div>
+      <div class="content_button" onclick="show_hotbar(document.getElementById('input_size1').value)" >Hotbar <input type="text" value = "1" id="input_size1"></div>
+  </div>
+  <div id="input_data">
+    <div id="input_text">Quantité?</div>
+    <div id="button1"  onclick="transferOneItem()"><center>1 item</center></div>
+    <div id="button2" onclick="transferAllItem()"><center>Tout</center></div>
+    <div id="button3" onclick="transferAcceptItem()"><center>Accepter</center></div>
+    <div id="button4" onclick="transferLeaveItem()"><center>Quitter</center></div>
+    <input type="inputType" id="input_type">
+    </div>
+  <script>
+
+function filterAllTrash() {
+  document.getElementById("eatFilter").value = "trash";
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("eatFilter");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+function filterAllBuild() {
+  document.getElementById("eatFilter").value = "build";
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("eatFilter");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+function filterAllHorse() {
+  document.getElementById("eatFilter").value = "horse";
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("eatFilter");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+function filterAllValuable() {
+  document.getElementById("eatFilter").value = "valuable";
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("eatFilter");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+function filterAllCraft() {
+  document.getElementById("eatFilter").value = "craft";
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("eatFilter");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+function filterAllHerb() {
+  document.getElementById("eatFilter").value = "herb";
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("eatFilter");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+function filterAllItem() {
+  document.getElementById("eatFilter").value = "";
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("eatFilter");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+function filterAllDrink() {
+  document.getElementById("eatFilter").value = "drink";
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("eatFilter");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+function filterAllEat() {
+  document.getElementById("eatFilter").value = "eat";
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("eatFilter");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+
+  $('input').click(function(){return false;});
+
+  function filterTextInput() {
+    var input, radios, radio_filter, text_filter, td0, i, divList;
+    input = document.getElementById("myInput");
+    text_filter = input.value.toUpperCase();
+   divList = $(".item");
+	
+    for (i = 0; i < divList.length; i++) {
+      td0 = divList[i].getAttribute('data-content');
+      if (td0) {
+        if (td0.toUpperCase().indexOf(text_filter) > -1) {
+          divList[i].style.display = "";
+        } else {
+          divList[i].style.display = "none";
+        }
+      } 
+    }
+}
+
+
+  </script>
+    <script src="./index.js" type="text/javascript"></script>
+    <script src="./config.js" type="text/javascript"></script>
+  </body>
+
+</html>

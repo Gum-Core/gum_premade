@@ -1,0 +1,507 @@
+
+body {
+    overflow:hidden;
+}
+#compass {
+    display:block;
+    position:absolute;
+    height:220px;
+    width:223px;
+    bottom:140px;
+    left:33px;
+    background-size: 100.0% 100.0%;
+    background-image: url('compas.png');
+    animation: fadeIn;
+    animation-duration: 0.7s;
+}
+
+.progress_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#progress {
+    position:absolute;
+	left:9px;
+	top:9px;
+}
+.progress_circle{
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.progress_active{
+    display:block;
+	position:absolute;
+	bottom:80px;
+	left:50px;
+    width: 41px;
+    height: 41px;
+    border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+
+.temperature_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#temperature {
+	position:absolute;
+	left:8px;
+	top:7px;
+}
+.temperature_circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.temperature_active {
+    display:block;
+	position:absolute;
+	bottom:30px;
+	left:250px;
+    width: 41px;
+    height: 41px;
+	border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+.voice_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#voice {
+	position:absolute;
+	left:8px;
+	top:7px;
+}
+.voice_circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.voice_active {
+    display:block;
+	position:absolute;
+	bottom:30px;
+	left:300px;
+    width: 41px;
+    height: 41px;
+	border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+.alcohol_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+
+#alcohol {
+    position:absolute;
+	left:11px;
+	top:9px;
+}
+
+.alcohol_circle{
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+
+.alcohol_active{
+    display:block;
+	position:absolute;
+	bottom:30px;
+	left:6px;
+    width: 41px;
+    height: 41px;
+    border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+.health_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#health {
+    position:absolute;
+	left:9px;
+	top:9px;
+}
+.health_circle{
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.health_active{
+    display:block;
+	position:absolute;
+	bottom:30px;
+	left:50px;
+    width: 41px;
+    height: 41px;
+    border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+
+
+
+
+.stamina_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#stamina {
+	position:absolute;
+	left:11px;
+	top:8px;
+}
+
+
+.stamina_circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.stamina_active {
+    display:block;
+	position:absolute;
+	bottom:30px;
+	left:100px;
+    width: 41px;
+    height: 41px;
+	border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+
+
+.stamina_perc2{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#stamina2 {
+	position:absolute;
+	left:11px;
+	top:8px;
+}
+
+
+.stamina_circle2 {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: transparent;
+}
+.stamina_active2 {
+    display:block;
+	position:absolute;
+	bottom:27px;
+	left:97px;
+    width: 47px;
+    height: 47px;
+	border-radius: 100%;
+    background-color:#797979;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+
+.horse_stamina_perc2{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#horse_stamina2 {
+	position:absolute;
+	left:10px;
+	top:7px;
+}
+.horse_stamina_circle2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.horse_stamina_active2 {
+    display:block;
+	position:absolute;
+	bottom:27px;
+	left:397px;
+    width: 47px;
+    height: 47px;
+	border-radius: 100%;
+    background-color:#797979;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+.horse_health_perc2{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#horse_health2 {
+	position:absolute;
+	left:8px;
+	top:7px;
+}
+.horse_health_circle2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.horse_health_active2 {
+    display:block;
+	position:absolute;
+	bottom:27px;
+	left:347px;
+    width: 47px;
+    height: 47px;
+	border-radius: 100%;
+    background-color:#797979;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+
+.health_perc2{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#health2 {
+    position:absolute;
+	left:9px;
+	top:9px;
+}
+.health_circle2{
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: transparent;
+}
+.health_active2{
+    display:block;
+	position:absolute;
+	bottom:27px;
+	left:47px;
+    width: 47px;
+    height: 47px;
+    border-radius: 100%;
+    background-color:#797979;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+
+
+
+
+
+
+.hunger_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#hunger {
+    position:absolute;
+	left:7px;
+	top:6px;
+}
+.hunger_circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.hunger_active {
+    display:block;
+	position:absolute;
+	bottom:30px;
+	left:150px;
+    width: 41px;
+    height: 41px;
+	border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+
+
+
+
+.thirst_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#thirst {
+	position:absolute;
+	left:9px;
+	top:7px;
+}
+.thirst_circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.thirst_active {
+    display:block;
+	position:absolute;
+	bottom:30px;
+	left:200px;
+    width: 41px;
+    height: 41px;
+	border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+
+
+.horse_health_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#horse_health {
+	position:absolute;
+	left:8px;
+	top:7px;
+}
+.horse_health_circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.horse_health_active {
+    display:block;
+	position:absolute;
+	bottom:30px;
+	left:350px;
+    width: 41px;
+    height: 41px;
+	border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
+
+
+
+
+.horse_stamina_perc{
+    top: 30px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.0);
+}
+#horse_stamina {
+	position:absolute;
+	left:10px;
+	top:7px;
+}
+.horse_stamina_circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: #000000;
+}
+.horse_stamina_active {
+    display:block;
+	position:absolute;
+	bottom:30px;
+	left:400px;
+    width: 41px;
+    height: 41px;
+	border-radius: 100%;
+    background-color:#ffffff;
+    background-image:
+        linear-gradient(91deg, transparent 50%, #000000 50%),
+        linear-gradient(90deg, #000000 50%, transparent 50%);
+}
