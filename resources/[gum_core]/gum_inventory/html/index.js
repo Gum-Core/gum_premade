@@ -241,7 +241,9 @@ $(function() {
         }
         if (item.type === "cleanTransfer") {
             blockMe = false
+            $.post('http://gum_inventory/cancelBlock');
         }
+        
         if (item.type === "input_data") {
             if (item.status === true) {
                 allCount = 0
@@ -337,7 +339,14 @@ function loadTableData(table_inv, money, wtable_inv, gold) {
             }
         }
         if (durabilityValue !== 0) {
-            dataHtml += '<div class="item" data-content="'+table_inv[i].category+'"><div id="'+ i +'" class="item-content" onMouseOver="change_name('+ i +')" ondblclick="UseItem('+i+')"><img src="images/items/' + table_inv[i].item + '.png" width="60" height="60"  id="item"><progress id="progress" max="100" value="'+durabilityValue+'">TEST</progress><div class="bottom-right" id="count_'+i+'">' + table_inv[i].count + '</br>'+Math.round(weight_item*100)/100+'kg</div></div></div>'
+            var image_url = 'nui://gum_inventory/html/images/items/' + table_inv[i].item + '.png';
+            if (doesFileExist(image_url) == "yes") {
+                dataHtml += '<div class="item" data-content="'+table_inv[i].category+'"><div id="'+ i +'" class="item-content" onMouseOver="change_name('+ i +')" ondblclick="UseItem('+i+')"><img src="images/items/' + table_inv[i].item + '.png" width="60" height="60"  id="item"><progress id="progress" max="100" value="'+durabilityValue+'">TEST</progress><div class="bottom-right" id="count_'+i+'">' + table_inv[i].count + '</br>'+Math.round(weight_item*100)/100+'kg</div></div></div>'
+            } else {
+                dataHtml += '<div class="item" data-content="'+table_inv[i].category+'"><div id="'+ i +'" class="item-content" onMouseOver="change_name('+ i +')" ondblclick="UseItem('+i+')"><img src="images/items/badItem.png" width="60" height="60"  id="item"><progress id="progress" max="100" value="'+durabilityValue+'">TEST</progress><div class="bottom-right" id="count_'+i+'">' + table_inv[i].count + '</br>'+Math.round(weight_item*100)/100+'kg</div></div></div>'
+            }
+
+
         } else {
             var image_url = 'nui://gum_inventory/html/images/items/' + table_inv[i].item + '.png';
             if (doesFileExist(image_url) == "yes") {
@@ -350,7 +359,7 @@ function loadTableData(table_inv, money, wtable_inv, gold) {
     }
     for (var i in wtable_inv) {
         count_winventory = count_winventory+1
-        dataHtml += '<div class="item" data-content="weapon"><div id="'+ i +'" class="item-content" onMouseOver="change_name_wep('+ i +')"  ondblclick="UseWeapon(\''+wtable_inv[i].id+'\',\''+wtable_inv[i].name+'\')"><img src="images/items/' + wtable_inv[i].name + '.png" width="60" height="60"  id="weapon"><div class="bottom-right" id="count_'+i+'"></div></div></div>'
+        dataHtml += '<div class="item" data-content="valuable"><div id="'+ i +'" class="item-content" onMouseOver="change_name_wep('+ i +')"  ondblclick="UseWeapon(\''+wtable_inv[i].id+'\',\''+wtable_inv[i].name+'\')"><img src="images/items/' + wtable_inv[i].name + '.png" width="60" height="60"  id="weapon"><div class="bottom-right" id="count_'+i+'"></div></div></div>'
     }
     tableBody.innerHTML = dataHtml
 }
@@ -457,7 +466,7 @@ function transfer_from_storage() {
         }
         drag_to_normal = false
     }
-}//
+}
 
 function loadstoragedata(strg_dt) {
     $("#expand_container").show();
@@ -510,9 +519,9 @@ function loadstoragedata(strg_dt) {
             data_storage_Html += '<div class="item" data-content="'+strg_dt[i].label+'"><div id="'+ i +'" class="item-content"  ondblclick="transfer_from_storage()" onMouseOver="change_name_other('+ i +')" ><img src="images/items/' + strg_dt[i].count + '.png" width="60" height="60"  id="item"></div></div>'
         }
     }
-
     tableBodyStorage.innerHTML = data_storage_Html
     filterTextInput()
+    $.post('http://gum_inventory/cancelBlock');
 }
 
 var frs1 = document.getElementById('grid0');

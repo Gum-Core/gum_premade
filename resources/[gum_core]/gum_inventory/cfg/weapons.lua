@@ -216,5 +216,9 @@ RECORDSW = {
         item = "WEAPON_REVOLVER_CATTLEMAN_MEXICAN",
         label = "Mexican Cattleman"
     },
+    {
+        item = "weapon_revolver_navy_crossover",
+        label = "Navy Crossover"
+    }
 }
 

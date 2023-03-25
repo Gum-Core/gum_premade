@@ -9,6 +9,7 @@ var block_spam = false
 var value_ammo = 1
 var backupMe = undefined
 var overMe = false
+var Language = {}
 $(document).keydown(function(e){
 	var close = 27, close2 = 8;
 	switch (e.keyCode) {

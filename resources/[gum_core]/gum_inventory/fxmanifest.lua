@@ -1,16 +1,17 @@
 fx_version 'adamant'
+
 game 'rdr3'
-author "gum"
+
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 
 files {
-  'cfg/config.lua'
+  'config.lua'
 }
 
 client_scripts {
   "@uiprompt/uiprompt.lua",
-  'cfg/config.lua',
-  'client/client.lua',
+  'config.lua',
+  'client.lua',
 }
 shared_scripts {
   "cfg/weapons.lua",
@@ -18,9 +19,9 @@ shared_scripts {
 server_exports{'gum_inventoryApi'} 
 
 server_scripts {
-  'cfg/config.lua',
+  'config.lua',
   'gumInventoryAPI.lua',
-  'server/server.lua',
+  'server.lua',
 }
 ui_page 'html/index.html'
 
