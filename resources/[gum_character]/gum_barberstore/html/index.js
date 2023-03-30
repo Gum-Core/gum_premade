@@ -1,3 +1,5 @@
+var slider45 = document.getElementById("HAIRSSTABLE_OPACITY");
+var slider46 = document.getElementById("HAIRSSTABLE_COLOR");
 var slider47 = document.getElementById("HAIRS");
 var slider48 = document.getElementById("BEARDS");
 var slider49 = document.getElementById("BEARDSSTABLE_OPACITY");
@@ -40,6 +42,8 @@ var slider92 = document.getElementById("SPOTS_OPACITY");
 var slider124 = document.getElementById("TEETHS");
 var slider125 = document.getElementById("HAIRSACCESSORIE");
 
+slider45.oninput = function() {send_change(this.value, this.id)}
+slider46.oninput = function() {send_change(this.value, this.id)}
 slider47.oninput = function() {send_change(this.value, this.id)}
 slider48.oninput = function() {send_change(this.value, this.id)}
 slider49.oninput = function() {send_change(this.value, this.id)}

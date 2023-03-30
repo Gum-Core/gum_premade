@@ -66,7 +66,6 @@ end)
 
 RegisterNetEvent('gum_character:select_char')
 AddEventHandler('gum_character:select_char', function(table, tableuser)
-    -- Citizen.Wait(1000)
     SetEntityCoords(PlayerPedId(), 270.33380126953125, -4076.84521484375, 215.644775390625)
     FreezeEntityPosition(PlayerPedId(), true)
     obj1 = CreateObject(GetHashKey("p_bespoketable01x"), 266.30059814453125, -4083.032470703125, 215.14749145507812, false, false, false)
@@ -146,64 +145,6 @@ AddEventHandler('gum_character:select_char', function(table, tableuser)
             Ped_Data_Load(character_4, json.decode(v.skinPlayer), json.decode(v.compPlayer), k)
         end
     end
-    -- DeletePed(character_1)
-    -- DeletePed(character_2)
-    -- DeletePed(character_3)
-    -- DeletePed(character_4)
-    -- Citizen.Wait(500)
-    -- -- while loading < 40000 do
-    -- --     Citizen.Wait(0)
-    -- -- end
-    -- for k,v in pairs(PlayerTable) do
-    --     if k == 1 then
-    --         reload_data = 0
-    --         local spawn_id = json.decode(v.skinPlayer).sex
-    --         while not HasModelLoaded(GetHashKey(spawn_id)) do
-    --             Wait(0)
-    --             modelrequest( GetHashKey(spawn_id) )
-    --         end
-    --         character_1 = CreatePed(GetHashKey(spawn_id), 266.5332946777344, -4081.912841796875, 215.24795532226562, false, false, 0, 0)
-    --         FreezeEntityPosition(character_1, true)
-    --         SetEntityHeading(character_1, -14.50)
-    --         Ped_Data_Load(character_1, json.decode(v.skinPlayer), json.decode(v.compPlayer), k)
-    --     end
-    --     if k == 2 then
-    --         reload_data = 0
-    --         local spawn_id = json.decode(v.skinPlayer).sex
-    --         while not HasModelLoaded(GetHashKey(spawn_id)) do
-    --             Wait(0)
-    --             modelrequest( GetHashKey(spawn_id) )
-    --         end
-    --         character_2 = CreatePed(GetHashKey(spawn_id), 268.0679931640625, -4083.172119140625, 215.05360412597656, false, false, 0, 0)
-    --         FreezeEntityPosition(character_2, true)
-    --         SetEntityHeading(character_2, 34.50)
-    --         Ped_Data_Load(character_2, json.decode(v.skinPlayer), json.decode(v.compPlayer), k)
-    --     end
-    --     if k == 3 then
-    --         reload_data = 0
-    --         local spawn_id = json.decode(v.skinPlayer).sex
-    --         while not HasModelLoaded(GetHashKey(spawn_id)) do
-    --             Wait(0)
-    --             modelrequest( GetHashKey(spawn_id) )
-    --         end
-    --         character_3 = CreatePed(GetHashKey(spawn_id), 264.5610656738281, -4081.426025390625, 215.35443115234375, false, false, 0, 0)
-    --         FreezeEntityPosition(character_3, true)
-    --         SetEntityHeading(character_3, -37.76)
-    --         Ped_Data_Load(character_3, json.decode(v.skinPlayer), json.decode(v.compPlayer), k)
-    --     end
-    --     if k == 4 then
-    --         reload_data = 0
-    --         local spawn_id = json.decode(v.skinPlayer).sex
-    --         while not HasModelLoaded(GetHashKey(spawn_id)) do
-    --             Wait(0)
-    --             modelrequest( GetHashKey(spawn_id) )
-    --         end
-    --         character_4 = CreatePed(GetHashKey(spawn_id), 263.49176025390625, -4080.19384765625, 215.3523406982422, false, false, 0, 0)
-    --         FreezeEntityPosition(character_4, true)
-    --         SetEntityHeading(character_4, -35.76)
-    --         Ped_Data_Load(character_4, json.decode(v.skinPlayer), json.decode(v.compPlayer), k)
-    --     end
-    -- end
     Citizen.Wait(100)
     playAnim(character_1, 'script_mp@photo_studio@sit_on_crate@male', 'idle_m02', -1, 1)
     playAnim(character_2, 'script_mp@photo_studio@sit_on_crate@male', 'idle_m04', -1, 1)
@@ -336,27 +277,20 @@ end
 function Has_Body_Loaded(ped, type, hash_for_load, text)
     local readyLoad = false
     local timeout = 0
+    Citizen.InvokeNative(0xD3A7B003ED343FD9, ped, hash_for_load, false, true, true)
     while readyLoad == false do
-        Citizen.InvokeNative(0xD3A7B003ED343FD9, ped, hash_for_load, false, true, true)
-        Wait(100)
-        Citizen.InvokeNative(0x704C908E9C405136, ped)
-        Citizen.InvokeNative(0xCC8CA3E88256E58F, ped, 0, 1, 1, 1, 0)
-        Wait(0)
         readyLoad = Citizen.InvokeNative(0xA0BC8FAED8CFEB3C, ped)
+        Wait(0)
     end
     return true
 end
 
 function Has_Body_Loaded_Clothe(ped, type, hash_for_load, text)
     local readyLoad = false
-    local timeout = 0
+    Citizen.InvokeNative(0xD3A7B003ED343FD9, ped, hash_for_load, false, true, true)
     while readyLoad == false do
-        Citizen.InvokeNative(0xD3A7B003ED343FD9, ped, hash_for_load, false, true, true)
-        Wait(0)
-        Citizen.InvokeNative(0x704C908E9C405136, ped)
-        Citizen.InvokeNative(0xCC8CA3E88256E58F, ped, 0, 1, 1, 1, 0)
-        Wait(0)
         readyLoad = Citizen.InvokeNative(0xA0BC8FAED8CFEB3C, ped)
+        Wait(0)
     end
     return true
 end
@@ -366,9 +300,7 @@ function Ped_Data_Load(ppid, Skin_Table, Clothe_Table, key)
     Has_Body_Loaded(ppid, 0xB3966C9, Skin_Table["Body"], "Body")
     Has_Body_Loaded(ppid, 0x378AD10C, Skin_Table["HeadType"], "Head")
     Has_Body_Loaded(ppid, 0x823687F5, Skin_Table["LegsType"], "Legs")
-    Citizen.Wait(0)
-    Citizen.InvokeNative(0xCC8CA3E88256E58F, ped, 0, 1, 1, 1, false);
-    Citizen.Wait(0)
+    Citizen.Wait(2)
     for i=1,6 do
         if Skin_Table["Nation"] == i then
             for k,v in pairs(Config.DefaultChar["Male"][i]) do
@@ -384,12 +316,10 @@ function Ped_Data_Load(ppid, Skin_Table, Clothe_Table, key)
             end
         end
     end
-    Citizen.InvokeNative(0xCC8CA3E88256E58F, ppid, 0, 1, 1, 1, false);
     Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid, Skin_Table["Body"], false, true, true)
     Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid, Skin_Table["HeadType"], false, true, true)
     Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid, Skin_Table["BodyType"], false, true, true);
     Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid, Skin_Table["Waist"], false, true, true);
-    Citizen.InvokeNative(0xCC8CA3E88256E58F, ppid, 0, 1, 1, 1, false);
     if Skin_Table["Eyes"] ~= -1 then
         Has_Body_Loaded(ppid, 0xEA24B45E, Skin_Table["Eyes"], "EYES")
     end
@@ -400,9 +330,7 @@ function Ped_Data_Load(ppid, Skin_Table, Clothe_Table, key)
         Has_Body_Loaded_Clothe(ppid, 0xF8016BCA, Skin_Table["Beard"], "BEARD")
     end
     Citizen.InvokeNative(0x1902C4CFCC5BE57C, ppid, Skin_Table["BodyType"], false, true, true);
-    Citizen.InvokeNative(0xCC8CA3E88256E58F, ppid, 0, 1, 1, 1, false);
     Citizen.InvokeNative(0x1902C4CFCC5BE57C, ppid, Skin_Table["Waist"], false, true, true);
-    Citizen.InvokeNative(0xCC8CA3E88256E58F, ppid, 0, 1, 1, 1, false);
  
     if Clothe_Table["Hat"] ~= -1 then
         Has_Body_Loaded_Clothe(ppid,0x9925C067, Clothe_Table["Hat"], "HAT")
@@ -514,7 +442,7 @@ function Ped_Data_Load(ppid, Skin_Table, Clothe_Table, key)
     Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid, Skin_Table["HeadType"], false, true, true)
     Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid, Skin_Table["BodyType"], false, true, true)
     Citizen.InvokeNative(0xCC8CA3E88256E58F, ppid, 0, 1, 1, 1, false);
-    Citizen.Wait(400)
+    Citizen.Wait(0)
     Citizen.InvokeNative(0xD710A5007C2AC539, ppid, 0xEA24B45E, 0);
     Citizen.InvokeNative(0xD710A5007C2AC539, ppid, 0x864B03AE, 0);
     Citizen.InvokeNative(0xD710A5007C2AC539, ppid, 0xF8016BCA, 0);
@@ -554,7 +482,7 @@ function Ped_Data_Load(ppid, Skin_Table, Clothe_Table, key)
     Citizen.InvokeNative(0xD710A5007C2AC539, ppid, 0x378AD10C, 0);
     Citizen.InvokeNative(0xD710A5007C2AC539, ppid, 0x823687F5, 0);
     Citizen.InvokeNative(0xCC8CA3E88256E58F, ppid, 0, 1, 1, 1, 0);
-    Citizen.Wait(700)
+    Citizen.Wait(0)
     Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid,  Skin_Table["Body"],       true, true, false);
     Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid,  Skin_Table["HeadType"],       true, true, false);
     Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid,  Skin_Table["LegsType"],       true, true, false);
@@ -667,7 +595,7 @@ function Ped_Data_Load(ppid, Skin_Table, Clothe_Table, key)
         Citizen.InvokeNative(0xD3A7B003ED343FD9, ppid,  Skin_Table["Teeth"], true, true, false);
     end
     Citizen.InvokeNative(0xCC8CA3E88256E58F, ppid, 0, 1, 1, 1, 0);
-    Citizen.Wait(400)
+    Citizen.Wait(0)
     Citizen.InvokeNative(0x5653AB26C82938CF, ppid, 0x84D6, Skin_Table["HeadSize"]);
     Citizen.InvokeNative(0x5653AB26C82938CF, ppid, 0x3303, Skin_Table["EyeBrowH"]);
     Citizen.InvokeNative(0x5653AB26C82938CF, ppid, 0x2FF9, Skin_Table["EyeBrowW"]);

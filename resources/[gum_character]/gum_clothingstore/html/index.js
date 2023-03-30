@@ -230,5 +230,68 @@ function save_character() {
 }
 
 function send_change(value, id){
+    if (id == "HAT") {
+        document.getElementById("hatText").innerHTML = "Hat - " + value
+    } else if (id == "EYEWEAR") {
+        document.getElementById("eyeText").innerHTML = "Eyewear - " + value
+    } else if (id == "SCARF") {
+        document.getElementById("scarfText").innerHTML = "Scarf - " + value
+    } else if (id == "MASK") {
+        document.getElementById("MaskText").innerHTML = "Mask - " + value
+    } else if (id == "NECKTIE") {
+        document.getElementById("NeckText").innerHTML = "Necktie - " + value
+    } else if (id == "SHIRT") {
+        document.getElementById("ShirtText").innerHTML = "Shirt - " + value
+    } else if (id == "SUSPENDER") {
+        document.getElementById("SuspenderText").innerHTML = "Suspender - " + value
+    } else if (id == "VEST") {
+        document.getElementById("VestText").innerHTML = "Vest - " + value
+    } else if (id == "COAT") {
+        document.getElementById("CoatText").innerHTML = "Coat - " + value
+    } else if (id == "CCOAT") {
+        document.getElementById("CCOatText").innerHTML = "Ccoat - " + value
+    } else if (id == "PONCHO") {
+        document.getElementById("PonchoText").innerHTML = "Poncho - " + value
+    } else if (id == "CLOAK") {
+        document.getElementById("CloakText").innerHTML = "Cloak - " + value
+    } else if (id == "GLOVE") {
+        document.getElementById("GloveText").innerHTML = "Glove - " + value
+    } else if (id == "RRING") {
+        document.getElementById("RRingText").innerHTML = "Rring - " + value
+    } else if (id == "LRING") {
+        document.getElementById("LRingText").innerHTML = "Lring - " + value
+    } else if (id == "BRACELET") {
+        document.getElementById("BraceletText").innerHTML = "Bracelet - " + value
+    } else if (id == "GUNBELT") {
+        document.getElementById("GunBeltText").innerHTML = "Gunbelt - " + value
+    } else if (id == "GUNBELTACS") {
+        document.getElementById("GunAccText").innerHTML = "Gunbeltacs - " + value
+    } else if (id == "BELT") {
+        document.getElementById("BeltText").innerHTML = "Belt - " + value
+    } else if (id == "BUCKLE") {
+        document.getElementById("BuckleText").innerHTML = "Buckle - " + value
+    } else if (id == "LHOLSTER") {
+        document.getElementById("LHolsterText").innerHTML = "Lholster - " + value
+    } else if (id == "PANT") {
+        document.getElementById("PantText").innerHTML = "Pant - " + value
+    } else if (id == "SPAT") {
+        document.getElementById("SpatText").innerHTML = "Spat - " + value
+    } else if (id == "SKIRT") {
+        document.getElementById("SkirtText").innerHTML = "Skirt - " + value
+    } else if (id == "CHAP") {
+        document.getElementById("ChapText").innerHTML = "Chap - " + value
+    } else if (id == "BOOT") {
+        document.getElementById("BootText").innerHTML = "Boot - " + value
+    } else if (id == "SPUR") {
+        document.getElementById("SpurText").innerHTML = "Spur - " + value
+    } else if (id == "GAUNTLET") {
+        document.getElementById("GauntletText").innerHTML = "Gauntlet - " + value
+    } else if (id == "ACCESORIE") {
+        document.getElementById("AccText").innerHTML = "Accesorie - " + value
+    } else if (id == "SATCHEL") {
+        document.getElementById("SatchelText").innerHTML = "Satchel - " + value
+    } else if (id == "LOADOUT") {
+        document.getElementById("LoadoutText").innerHTML = "Loadout - " + value
+    }
     $.post('http://gum_clothingstore/send_change', JSON.stringify({ id:id, value: value}));
 }

@@ -241,7 +241,6 @@ $(function() {
         }
         if (item.type === "cleanTransfer") {
             blockMe = false
-            $.post('http://gum_inventory/cancelBlock');
         }
         
         if (item.type === "input_data") {
@@ -521,7 +520,10 @@ function loadstoragedata(strg_dt) {
     }
     tableBodyStorage.innerHTML = data_storage_Html
     filterTextInput()
-    $.post('http://gum_inventory/cancelBlock');
+    setTimeout(() => {
+        blockMe = false;  
+        $.post('http://gum_inventory/cancelBlock');
+    }, 200);
 }
 
 var frs1 = document.getElementById('grid0');

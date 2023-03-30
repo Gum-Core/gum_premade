@@ -151,13 +151,12 @@ AddEventHandler('gum_inventory:refresh_storage', function(storage, itm, wpn,id)
 			end
 		end
 	end
-	Citizen.Wait(100)
+	Citizen.Wait(50)
 	Show_Other(true, id, storage_table, money_state, size)
 end)
 
 RegisterNUICallback('cancelBlock', function(data, cb)
 	blockSpamming = false
-	SendNUIMessage({type = "cleanTransfer"})
 end)
 
 RegisterNUICallback('hotbar_set', function(data, cb)
@@ -205,6 +204,7 @@ RegisterNUICallback('transfer_from_storage', function(data, cb)
 			end
 		end)
 	elseif data.item == "gold" then
+		blockSpamming = true
 		Citizen.CreateThread(function()
 			SendNUIMessage({type = "input_data", status=true, count=data.count})
 			while waitForInteraction == nil do
@@ -229,6 +229,7 @@ RegisterNUICallback('transfer_from_storage', function(data, cb)
 			end
 		end)
 	else
+		blockSpamming = true
 		if data.weapon == false then
 			if tonumber(data.countInInventory) == 1 then
 				if tonumber(data.count) >= tonumber(1) and Config.Max_Items >= tonumber(count_in_inventory+1*data.limit) then
@@ -242,7 +243,6 @@ RegisterNUICallback('transfer_from_storage', function(data, cb)
 						TriggerServerEvent("gum_inventory:transfer_item_from_storage", data.item, 1, id_container, data.itemId, data.metaData)
 					else
 						TriggerServerEvent("gum_inventory:transfer_item_from_storage", data.item, 1, id_container, data.itemId, nil)
-						SendNUIMessage({type = "cleanTransfer"})
 					end
 				else
 					Show_Other(true, id_container, storage_table, money_state, size)
@@ -474,8 +474,8 @@ AddEventHandler("gum:SelectedCharacter", function(charid)
 		TriggerServerEvent("gum_inventory:get_money")
 		Citizen.Wait(1000)
 		equip_weapon_login()
-		Citizen.Wait(500)
-        TriggerEvent("gum_inventory:reload_weap")
+		-- Citizen.Wait(500)
+        -- TriggerEvent("gum_inventory:reload_weap")
 		Button_Prompt()
 	end)
 	Citizen.CreateThread(function()
@@ -1144,7 +1144,7 @@ end
 RegisterNetEvent('gum_inventory:reload_weap')
 AddEventHandler('gum_inventory:reload_weap', function()
 	RemoveAllWeapons()
-	Citizen.Wait(1000)
+	Citizen.Wait(100)
 	for k,v in pairs(weapon_table) do
 		if v.used == 1 then
 			if Citizen.InvokeNative(0xD955FEE4B87AFA07, GetHashKey(v.name)) then
@@ -1254,7 +1254,7 @@ function equip_weapon_login()
 	end
 	login_continue = true
 	while login_continue == false do
-		Citizen.Wait(10)
+		Citizen.Wait(0)
 	end
 	Citizen.InvokeNative(0xFCCC886EDE3C63EC, PlayerPedId(), false, false, false)
 	if weapon_second_used ~= false and weapon_first_used ~= false then
@@ -1345,7 +1345,7 @@ RegisterNUICallback('put_clothe', function(data, cb)
 		ExecuteCommand("kamase")
 		ExecuteCommand("sukne")
 	elseif tonumber(data.clothe) == 17 then--Boty
-		ExecuteCommand("boty")
+		ExecuteCommand("boty") 
 		ExecuteCommand("ostruhy")
 	end
 end)
@@ -1664,7 +1664,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		Citizen.Wait(100)
+		Citizen.Wait(300)
 	end
 end)
 
@@ -1683,6 +1683,22 @@ Citizen.CreateThread(function()
 				Citizen.InvokeNative(0xADF692B254977C0C, PlayerPedId(), GetHashKey(weapon_second_used), 0, 1, 0, 0);
 			end
 		end
+		local _, wepHash = GetCurrentPedWeapon(PlayerPedId(), true, 0, true)
+		if GetHashKey('weapon_melee_davy_lantern') == wepHash  then
+			if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x53296B75) then
+				if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x53296B75) then
+					GiveWeaponToPed_2(PlayerPedId(), GetHashKey('weapon_melee_davy_lantern'), 0, true,true, 12, false, 0.5, 1.0, 752097756, false,0, false);
+					Citizen.InvokeNative(0xADF692B254977C0C, PlayerPedId(), GetHashKey('weapon_melee_davy_lantern'), 0, 12, 0, 0);
+				end
+			end
+		end
+		Citizen.Wait(5)
+	end
+end)
+
+Citizen.CreateThread(function()
+	while true do
+		local optimize = 1000
 		for k,v in pairs(dropped_items_entity) do
 			local coords_p = GetEntityCoords(PlayerPedId())
 			local coords_i = GetEntityCoords(v.entity)
@@ -1690,6 +1706,7 @@ Citizen.CreateThread(function()
 			local closestPlayer, closestDistance, playerid, tgt1 = GetClosestPlayer()
 			if (1.0 > distance) and (closestDistance >= 2.0 or closestDistance == -1) then
 				if (v.item.."_"..v.count.."_".._id == _item.."_".._count.."_".._id) then
+					optimize = 5
 					if active == false then
 						if v.weapon == false then 
 							if v.item ~= "money" and v.item ~= "gold" then
@@ -1833,16 +1850,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		local _, wepHash = GetCurrentPedWeapon(PlayerPedId(), true, 0, true)
-		if GetHashKey('weapon_melee_davy_lantern') == wepHash  then
-			if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x53296B75) then
-				if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x53296B75) then
-					GiveWeaponToPed_2(PlayerPedId(), GetHashKey('weapon_melee_davy_lantern'), 0, true,true, 12, false, 0.5, 1.0, 752097756, false,0, false);
-					Citizen.InvokeNative(0xADF692B254977C0C, PlayerPedId(), GetHashKey('weapon_melee_davy_lantern'), 0, 12, 0, 0);
-				end
-			end
-		end
-		Citizen.Wait(5)
+		Citizen.Wait(optimize)
 	end
 end)
 
@@ -1851,8 +1859,10 @@ Citizen.CreateThread(function()
 	local player_prompt2
 	local player_prompt3
 	while true do
+		local optimize = 20
 		local combat_stance = IsPedInMeleeCombat(PlayerPedId())
 		if slot1 ~= "" then
+			optimize = 5
 			DisableControlAction(0, 0x1CE6D9EB, true)
 			if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x1CE6D9EB) then
 				for k,v in pairs(inventory_table) do
@@ -1863,6 +1873,7 @@ Citizen.CreateThread(function()
 			end
 		end
 		if slot2 ~= "" then
+			optimize = 5
 			DisableControlAction(0, 0x4F49CC4C, true)
 			if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x4F49CC4C) then
 				for k,v in pairs(inventory_table) do
@@ -1873,6 +1884,7 @@ Citizen.CreateThread(function()
 			end
 		end
 		if slot3 ~= "" then
+			optimize = 5
 			DisableControlAction(0, 0x8F9F9E58, true)
 			if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x8F9F9E58) then
 				for k,v in pairs(inventory_table) do
@@ -1883,6 +1895,7 @@ Citizen.CreateThread(function()
 			end
 		end
 		if slot4 ~= "" then
+			optimize = 5
 			DisableControlAction(0, 0xAB62E997, true)
 			if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0xAB62E997) then
 				for k,v in pairs(inventory_table) do
@@ -1893,6 +1906,7 @@ Citizen.CreateThread(function()
 			end
 		end
 		if slot5 ~= "" then
+			optimize = 5
 			DisableControlAction(0, 0xA1FDE2A6, true)
 			if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0xA1FDE2A6) then
 				for k,v in pairs(inventory_table) do
@@ -1911,6 +1925,7 @@ Citizen.CreateThread(function()
 		local coords = GetEntityCoords(tgt1, true)
 		local holding = Citizen.InvokeNative(0xD806CD2A4F2C2996, PlayerPedId())
 		if isTargetting and tgt1 == targetEntity and cant_target == false and holding == false then
+			optimize = 5
 			if player_prompt then				player_prompt:delete()			end
 			if player_prompt2 then				player_prompt2:delete()			end
 			if player_prompt3 then				player_prompt3:delete()			end
@@ -1950,7 +1965,7 @@ Citizen.CreateThread(function()
 		if tonumber(speed) ~= 0 then
 			SetPedMaxMoveBlendRatio(PlayerPedId(), speed)
 		end
-		Citizen.Wait(5)
+		Citizen.Wait(optimize)
 	end
 end)
 RegisterNetEvent('gum_inventory:hostage')
