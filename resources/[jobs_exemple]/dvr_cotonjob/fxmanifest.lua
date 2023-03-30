@@ -15,8 +15,6 @@ server_scripts {
 }
 
 client_scripts {
-	'maladies/client/*.lua',
-	'maladies/config/*.lua',
 	'client/*.lua',
 }
 
