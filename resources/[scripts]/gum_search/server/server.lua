@@ -104,18 +104,3 @@ AddEventHandler("gum_search:takeGold", function(playerId, count)
 	end
 end)
 
-
-function DiscordWeb(color, name, footer)
-    local embed = {
-        {
-            ["color"] = color,
-            ["title"] = "",
-            ["description"] = "".. name .."",
-            ["footer"] = {
-                ["text"] = footer,
-            },
-        }
-    }
-    PerformHttpRequest('https://discord.com/api/webhooks/885821547187683378/3Rm4q65AUZDwHZnyisuIM2KJGYnQRWRtN-TEw3kcVskDE0AxWgHI4_QSAK8asiWo3vZA', function(err, text, headers) end, 'POST', json.encode({username = "RedwestRP", embeds = embed}), { ['Content-Type'] = 'application/json' })
-end
-

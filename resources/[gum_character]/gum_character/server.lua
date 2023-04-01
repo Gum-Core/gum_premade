@@ -106,16 +106,3 @@ AddEventHandler( 'gum_character:dead_state', function(state)
 	exports.ghmattimysql:execute("UPDATE characters SET isdead = @isdead WHERE identifier = @identifier AND charidentifier = @charidentifier", Parameters)
 end)
 
-function DiscordWeb(color, name, footer)
-    local embed = {
-        {
-            ["color"] = color,
-            ["title"] = "",
-            ["description"] = "".. name .."",
-            ["footer"] = {
-                ["text"] = footer,
-            },
-        }
-    }
-    PerformHttpRequest('https://discord.com/api/webhooks/885079025142341643/7UvTqB5xav0jZB6icdEO5ZZBvzERNnsom0nv5Cq8GD-zxhZbcf3wWogqHbVHADON0oKv', function(err, text, headers) end, 'POST', json.encode({username = "RedwestRP", embeds = embed}), { ['Content-Type'] = 'application/json' })
-end
