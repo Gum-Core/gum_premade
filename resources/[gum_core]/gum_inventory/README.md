@@ -25,7 +25,3 @@
 
 GM's design</br></br>
 ![GM's design](https://media.giphy.com/media/EMEBfSbyGjPsqWTg0c/giphy.gif) 
-
-
-DVR's Design</br></br>
-![DVR's Design](https://media.giphy.com/media/bwaCNubMVCTp7Cee7U/giphy.gif)
