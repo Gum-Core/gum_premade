@@ -5,6 +5,8 @@ exports {
 	'loading',
 }
 client_scripts {
+    'locale.lua',
+    'lang/*.lua',
 	'full_database.lua',
 	'config.lua',
 	'client.lua',

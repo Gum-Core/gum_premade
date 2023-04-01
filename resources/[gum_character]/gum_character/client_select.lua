@@ -235,7 +235,7 @@ RegisterNUICallback('make_new', function(data, cb)
         })
         TriggerEvent('gum_character:make_character')
     else
-        exports['gum_notify']:DisplayLeftNotification("Character selection", "You cant make character, becouse you have max limit.", 'character', 2000)
+        exports['gum_notify']:DisplayLeftNotification("Character selection", _U('192'), 'character', 2000)
     end
 end)
 

@@ -43,8 +43,8 @@ local buttons_prompt2 = GetRandomIntInRange(0, 0xffffff)
 local active2 = false
 local Clothe_Table_Backup = {}
 
-RegisterNetEvent("gum:SelectedCharacter")
-AddEventHandler("gum:SelectedCharacter", function(charid)
+--RegisterNetEvent("gum:SelectedCharacter")
+--AddEventHandler("gum:SelectedCharacter", function(charid)
     Citizen.CreateThread(function()
         Citizen.Wait(10000)
         for k,v in pairs(Config.ClothingStore) do
@@ -261,11 +261,11 @@ AddEventHandler("gum:SelectedCharacter", function(charid)
             end
         end
     end)
-end)
+--end)
 
 function Button_Prompt()
 	Citizen.CreateThread(function()
-        local str = Config.Language[1].text
+        local str = _U('1')
         Open_Store = Citizen.InvokeNative(0x04F97DE45A519419)
         PromptSetControlAction(Open_Store, 0x27D1C284)
         str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -299,7 +299,7 @@ Citizen.CreateThread(function()
                     Citizen.InvokeNative(0x2A32FAA57B937173, -1795314153, v["ClothingStore"][1], v["ClothingStore"][2], v["ClothingStore"][3] - 1.8, 0, 0, 0, 0, 0, 0, 1.5, 1.5, 0.5, 179, 166, 122, 155, 0, 0, 2, 0, 0, 0, 0)
                     optimalize = 5
                     if active == false then
-                        local item_name = CreateVarString(10, 'LITERAL_STRING', Config.Language[3].text)
+                        local item_name = CreateVarString(10, 'LITERAL_STRING', _U('3'))
                         PromptSetActiveGroupThisFrame(buttons_prompt, item_name)
                     end
                     if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x27D1C284) then
@@ -556,7 +556,7 @@ Citizen.CreateThread(function()
                         price = price+v
                     end
                     if active2 == false then
-                        local item_name = CreateVarString(10, 'LITERAL_STRING', ""..Config.Language[3].text..""..price.."$")
+                        local item_name = CreateVarString(10, 'LITERAL_STRING', "".._U('3')..""..price.."$")
                         PromptSetActiveGroupThisFrame(buttons_prompt2, item_name)
                     end
                     optimalize = 5
@@ -571,7 +571,7 @@ end)
 
 function Button_Prompt2()
 	Citizen.CreateThread(function()
-		local str = Config.Language[5].text
+		local str = _U('5')
 		RotateLPrompt = PromptRegisterBegin()
 		PromptSetControlAction(RotateLPrompt, 0x20190AB4)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -583,7 +583,7 @@ function Button_Prompt2()
 		PromptRegisterEnd(RotateLPrompt)
 	end)
 	Citizen.CreateThread(function()
-		local str = Config.Language[6].text
+		local str = _U('6')
 		RotateRPrompt = PromptRegisterBegin()
 		PromptSetControlAction(RotateRPrompt, 0xDEB34313)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -595,7 +595,7 @@ function Button_Prompt2()
 		PromptRegisterEnd(RotateRPrompt)
 	end)
     Citizen.CreateThread(function()
-		local str = Config.Language[7].text
+		local str = _U('7')
 		UpPrompt = Citizen.InvokeNative(0x04F97DE45A519419)
 		PromptSetControlAction(UpPrompt, 0x05CA7C52)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -607,7 +607,7 @@ function Button_Prompt2()
 		PromptRegisterEnd(UpPrompt)
 	end)
 	Citizen.CreateThread(function()
-		local str = Config.Language[8].text
+		local str = _U('8')
 		DownPrompt = Citizen.InvokeNative(0x04F97DE45A519419)
 		PromptSetControlAction(DownPrompt, 0x6319DB71)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -619,7 +619,7 @@ function Button_Prompt2()
 		PromptRegisterEnd(DownPrompt)
 	end)
     Citizen.CreateThread(function()
-        local str = Config.Language[9].text
+        local str = _U('9')
         Zoom1Prompt = PromptRegisterBegin()
         PromptSetControlAction(Zoom1Prompt, 0xE885EF16)
         str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -631,7 +631,7 @@ function Button_Prompt2()
         PromptRegisterEnd(Zoom1Prompt)
     end)
     Citizen.CreateThread(function()
-        local str = Config.Language[10].text
+        local str = _U('10')
         Zoom2Prompt = PromptRegisterBegin()
         PromptSetControlAction(Zoom2Prompt, 0x2277FAE9)
         str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -727,7 +727,7 @@ function play_anim(dict, name, time, flag)
     TaskPlayAnim(PlayerPedId(), dict, name, 1.0, 1.0, time, flag, 0, true, 0, false, 0, false)  
 end
 --Klobouk
-RegisterCommand(''..Config.Language[200].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('200')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x9925C067) then
         play_anim('mech_loco_m@character@arthur@fidgets@weather@sunny_hot@unarmed@variations@hat', 'hat_cool_c', 1000, 25)
         Citizen.Wait(1000)
@@ -745,7 +745,7 @@ RegisterCommand(''..Config.Language[200].text..'', function(source, args, rawCom
 end)
 
 --Brýle
-RegisterCommand(''..Config.Language[201].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('201')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x5E47CA6) then
         play_anim('mech_inventory@binoculars', 'look', 600, 25)
         Citizen.Wait(600)
@@ -763,7 +763,7 @@ RegisterCommand(''..Config.Language[201].text..'', function(source, args, rawCom
 end)
 
 --Šátek
-RegisterCommand(''..Config.Language[202].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('202')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x5FC29285) then
         play_anim('mech_inventory@clothing@bandana', 'neck_2_satchel', 3500, 25)
         Citizen.Wait(1500)
@@ -781,7 +781,7 @@ RegisterCommand(''..Config.Language[202].text..'', function(source, args, rawCom
 end)
 
 --Maska
-RegisterCommand(''..Config.Language[203].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('203')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x7505EF42) then
         play_anim('mech_loco_m@character@arthur@dehydrated@unarmed@idle@fidgets', 'idle_i', 1000, 25)
         Citizen.Wait(1000)
@@ -799,7 +799,7 @@ RegisterCommand(''..Config.Language[203].text..'', function(source, args, rawCom
 end)
 
 --Kamaše
-RegisterCommand(''..Config.Language[223].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('223')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x7505EF42) then
         play_anim('mech_loco_m@character@arthur@fidgets@insects@crouch@unarmed@idle', 'idle', 1000, 1)
         Citizen.Wait(1000)
@@ -817,7 +817,7 @@ RegisterCommand(''..Config.Language[223].text..'', function(source, args, rawCom
 end)
 
 --Kravata
-RegisterCommand(''..Config.Language[204].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('204')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x7A96FACA) then
         play_anim('mech_loco_m@character@arthur@fancy@unarmed@idle@_variations', 'idle_a', 3000, 25)
         Citizen.Wait(3000)
@@ -835,7 +835,7 @@ RegisterCommand(''..Config.Language[204].text..'', function(source, args, rawCom
 end)
 
 --Košile
-RegisterCommand(''..Config.Language[205].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('205')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x2026C46D) then
         play_anim('mech_loco_m@character@arthur@fancy@unarmed@idle@_variations', 'idle_b', 3000, 25)
         Citizen.Wait(3000)
@@ -853,7 +853,7 @@ RegisterCommand(''..Config.Language[205].text..'', function(source, args, rawCom
 end)
 
 --Sukně
-RegisterCommand(''..Config.Language[224].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('224')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0xA0E3AB7F) then
         play_anim('script_re@burning_bodies', 'push_two_bodies_undertaker', 3000, 25)
         Citizen.Wait(3000)
@@ -871,7 +871,7 @@ RegisterCommand(''..Config.Language[224].text..'', function(source, args, rawCom
 end)
 
 --Kšandy
-RegisterCommand(''..Config.Language[206].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('206')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x877A2CF7) then
         play_anim('script_proc@loansharking@undertaker@female_mourner', 'idle_02', 1000, 25)
         Citizen.Wait(1000)
@@ -889,7 +889,7 @@ RegisterCommand(''..Config.Language[206].text..'', function(source, args, rawCom
 end)
 
 --Vesta
-RegisterCommand(''..Config.Language[208].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('208')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x485EE834) then
         play_anim('mech_loco_m@character@arthur@fancy@unarmed@idle@_variations', 'idle_b', 5000, 25)
         Citizen.Wait(4500)
@@ -907,7 +907,7 @@ RegisterCommand(''..Config.Language[208].text..'', function(source, args, rawCom
 end)
 
 --Kabát
-RegisterCommand(''..Config.Language[209].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('209')..'', function(source, args, rawCommand)
     play_anim('mech_loco_m@character@arthur@fancy@unarmed@idle@_variations', 'idle_b', 5000, 25)
         Citizen.Wait(4500)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0xE06D30CE) then
@@ -927,7 +927,7 @@ RegisterCommand(''..Config.Language[209].text..'', function(source, args, rawCom
 end)
 
 --Poncho
-RegisterCommand(''..Config.Language[211].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('211')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0xAF14310B) then
         play_anim('script_proc@loansharking@undertaker@female_mourner', 'idle_01', 1000, 25)
         Citizen.Wait(1000)
@@ -945,7 +945,7 @@ RegisterCommand(''..Config.Language[211].text..'', function(source, args, rawCom
 end)
 
 --Muniční pásy
-RegisterCommand(''..Config.Language[231].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('231')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x83887E88) then
         play_anim('script_proc@loansharking@undertaker@female_mourner', 'idle_01', 1000, 25)
         Citizen.Wait(1000)
@@ -963,7 +963,7 @@ RegisterCommand(''..Config.Language[231].text..'', function(source, args, rawCom
 end)
 
 --Plášť
-RegisterCommand(''..Config.Language[212].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('212')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x3C1A74CD) then
         play_anim('script_proc@loansharking@undertaker@female_mourner', 'idle_01', 1000, 25)
         Citizen.Wait(1000)
@@ -981,7 +981,7 @@ RegisterCommand(''..Config.Language[212].text..'', function(source, args, rawCom
 end)
 
 --Rukavice
-RegisterCommand(''..Config.Language[213].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('213')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0xEABE0032) then
         play_anim('mech_loco_m@character@arthur@fidgets@item_selection@gloves', 'gloves_b', 2000, 25)
         Citizen.Wait(2000)
@@ -999,7 +999,7 @@ RegisterCommand(''..Config.Language[213].text..'', function(source, args, rawCom
 end)
 
 --Prsteny
-RegisterCommand(''..Config.Language[214].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('214')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x7A6BBD0B) then
         play_anim('mech_loco_m@character@arthur@fidgets@item_selection@gloves', 'gloves_a', 2000, 25)
         Citizen.Wait(2000)
@@ -1030,7 +1030,7 @@ RegisterCommand(''..Config.Language[214].text..'', function(source, args, rawCom
 end)
 
 --Náramek
-RegisterCommand(''..Config.Language[216].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('216')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x7BC10759) then
         play_anim('mech_loco_m@character@arthur@fidgets@item_selection@gloves', 'gloves_a', 2000, 25)
         Citizen.Wait(2000)
@@ -1048,7 +1048,7 @@ RegisterCommand(''..Config.Language[216].text..'', function(source, args, rawCom
 end)
 
 --Natepniky
-RegisterCommand(''..Config.Language[228].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('228')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x91CE9B20) then
         play_anim('mech_loco_m@character@arthur@fidgets@item_selection@gloves', 'gloves_b', 2000, 25)
         Citizen.Wait(2000)
@@ -1066,7 +1066,7 @@ RegisterCommand(''..Config.Language[228].text..'', function(source, args, rawCom
 end)
 
 --Opasek
-RegisterCommand(''..Config.Language[219].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('219')..'', function(source, args, rawCommand)
     play_anim('cnv_camp@rcdew@cnv@ccchr1', 'john_action_a', 1000, 25)
     Citizen.Wait(1000)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x9B2C8B89) then
@@ -1114,7 +1114,7 @@ end)
 
 
 --Brasny
-RegisterCommand(''..Config.Language[230].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('230')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x94504D26) then
         play_anim('script_proc@loansharking@undertaker@female_mourner', 'idle_01', 1000, 25)
         Citizen.Wait(1000)
@@ -1132,7 +1132,7 @@ RegisterCommand(''..Config.Language[230].text..'', function(source, args, rawCom
 end)
 
 --Doplňky
-RegisterCommand(''..Config.Language[229].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('229')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x79D7DF96) then
         play_anim('script_proc@loansharking@undertaker@female_mourner', 'idle_01', 1000, 25)
         Citizen.Wait(1000)
@@ -1150,7 +1150,7 @@ RegisterCommand(''..Config.Language[229].text..'', function(source, args, rawCom
 end)
 
 --Kalhoty
-RegisterCommand(''..Config.Language[222].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('222')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x1D4C528A) then
         play_anim('script_re@burning_bodies', 'push_two_bodies_undertaker', 3000, 25)
         Citizen.Wait(1000)
@@ -1168,7 +1168,7 @@ RegisterCommand(''..Config.Language[222].text..'', function(source, args, rawCom
 end)
 
 --Chapsy
-RegisterCommand(''..Config.Language[225].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('225')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x3107499B) then
         play_anim('script_re@burning_bodies', 'push_two_bodies_undertaker', 3000, 25)
         Citizen.Wait(3000)
@@ -1186,7 +1186,7 @@ RegisterCommand(''..Config.Language[225].text..'', function(source, args, rawCom
 end)
 
 --Boty
-RegisterCommand(''..Config.Language[226].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('226')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x777EC6EF) then
         play_anim('mech_loco_m@character@arthur@fidgets@insects@crouch@unarmed@idle', 'idle', 1000, 1)
         Citizen.Wait(1000)
@@ -1204,7 +1204,7 @@ RegisterCommand(''..Config.Language[226].text..'', function(source, args, rawCom
 end)
 
 --Ostruhy
-RegisterCommand(''..Config.Language[227].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('227')..'', function(source, args, rawCommand)
     if Citizen.InvokeNative(0xFB4891BD7578CDC1, PlayerPedId(), 0x18729F39) then
         play_anim('mech_loco_m@character@arthur@fidgets@insects@crouch@unarmed@idle', 'idle', 1000, 1)
         Citizen.Wait(1000)
@@ -1221,7 +1221,7 @@ RegisterCommand(''..Config.Language[227].text..'', function(source, args, rawCom
     Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0)
 end)
 --Obleknout
-RegisterCommand(''..Config.Language[232].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('232')..'', function(source, args, rawCommand)
     play_anim('mech_loco_m@character@arthur@fancy@unarmed@idle@_variations', 'idle_b', 5000, 25)
         Citizen.Wait(4500)
     for k,v in pairs(Clothe_Table) do
@@ -1231,7 +1231,7 @@ RegisterCommand(''..Config.Language[232].text..'', function(source, args, rawCom
     Citizen.InvokeNative(0xCC8CA3E88256E58F, PlayerPedId(), 0, 1, 1, 1, 0);
 end)
 --Svleknout
-RegisterCommand(''..Config.Language[233].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('233')..'', function(source, args, rawCommand)
     play_anim('mech_loco_m@character@arthur@fancy@unarmed@idle@_variations', 'idle_b', 5000, 25)
     Citizen.Wait(4500)
     Citizen.InvokeNative(0xD710A5007C2AC539, PlayerPedId(), 0x9925C067, 0);
@@ -1272,7 +1272,7 @@ RegisterCommand(''..Config.Language[233].text..'', function(source, args, rawCom
 end)
 --Bandana
 local bandana = false
-RegisterCommand(''..Config.Language[234].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('234')..'', function(source, args, rawCommand)
 	cache_comps = json.decode(comps)
 	if not bandana then 
 		Citizen.InvokeNative(0xAE72E7DF013AAA61, PlayerPedId(), Clothe_Table["NeckWear"], GetHashKey("BANDANA_ON_RIGHT_HAND"), 1, 0, -1082130432)
@@ -1290,7 +1290,7 @@ RegisterCommand(''..Config.Language[234].text..'', function(source, args, rawCom
 end)
 --Rukavy
 local sleeves = false
-RegisterCommand(''..Config.Language[235].text..'', function(source, args, rawCommand)
+RegisterCommand(''.._U('235')..'', function(source, args, rawCommand)
     play_anim('mech_loco_m@character@arthur@fidgets@item_selection@gloves', 'gloves_b', 2000, 25)
     Citizen.Wait(2000)
 	if not sleeves then 
@@ -1332,7 +1332,7 @@ RegisterNUICallback('close', function(data, cb)
     FreezeEntityPosition(PlayerPedId(),false)
     in_clothe = false
     EndCam()
-    ExecuteCommand(Config.Language[2].text)
+    ExecuteCommand(_U('2'))
     SetNuiFocus(false, false)
     SendNUIMessage({
         type = "clothing_maker",
@@ -1735,7 +1735,7 @@ RegisterNUICallback('save_clothing', function(data, cb)
                 end
             end
             FreezeEntityPosition(PlayerPedId(),false)
-            ExecuteCommand(Config.Language[2].text)
+            ExecuteCommand(_U('2'))
             EndCam()
             SetNuiFocus(false, false)
             SendNUIMessage({

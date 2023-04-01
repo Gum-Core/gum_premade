@@ -1,5 +1,5 @@
 Config = {}
-
+Config.defaultlang = "en"
 Config.Pricing = {
     Hat = 0.05,
     EyeWear = 0.05,
@@ -36,7 +36,7 @@ Config.Pricing = {
 
 Config.ClothingStore = {
     [1] =  {
-        ["ClothingBlip"] = "Obchod s oblečením Valentine",
+        ["ClothingBlip"] = _U("12"),
         ["ClothingStore"] = {-325.85, 774.49, 118.12},
         ["ClothingSpott"] = {-329.27, 775.06, 120.65},
         ["ClothingCamera"] = {-326.52, 775.40, 122.08, 94.14},
@@ -45,7 +45,7 @@ Config.ClothingStore = {
         ["DebugEscape"] = false,
     },
     [2] =  {
-        ["ClothingBlip"] = "Obchod s oblečením Saint Denis",
+        ["ClothingBlip"] = _U("13"),
         ["ClothingStore"] = {2554.6875, -1168.54052734375, 53.68349456787109},
         ["ClothingSpott"] = {2556.114501953125, -1161.2445068359375, 52.70168304443359},
         ["ClothingCamera"] = {2556.05, -1159.14, 54.15, -178.40},
@@ -54,7 +54,7 @@ Config.ClothingStore = {
         ["DebugEscape"] = true,
     },
     [3] =  {
-        ["ClothingBlip"] = "Obchod s oblečením Rhodes",
+        ["ClothingBlip"] = _U("14"),
         ["ClothingStore"] = {1322.535400390625, -1291.8333740234375, 77.02304077148438},
         ["ClothingSpott"] = {1323.9852294921875, -1288.159423828125, 76.01953125},
         ["ClothingCamera"] = {1322.89, -1290.71, 77.63, -23.15},
@@ -63,7 +63,7 @@ Config.ClothingStore = {
         ["DebugEscape"] = true,
     },
 	[4] =  {
-        ["ClothingBlip"] = "Obchod s oblečením Black Water",
+        ["ClothingBlip"] = _U("15"),
         ["ClothingStore"] = {-761.11, -1291.90, 43.89},
         ["ClothingSpott"] = {-767.36, -1292.50, 42.94},
         ["ClothingCamera"] = {-764.20, -1292.94, 44.69, 86.88},
@@ -72,7 +72,7 @@ Config.ClothingStore = {
     },
     [5] =  {
         ["BlipEnable"] = false,
-        ["ClothingBlip"] = "Obchod s oblečením",
+        ["ClothingBlip"] = _U("16"),
         ["ClothingStore"] = {2039.86376953125,1996.1104736328127,260.0164794921875},
         ["ClothingSpott"] = {2039.86376953125,1996.1104736328127,259.0164794921875},
         ["ClothingCamera"] = {2034.70, 1994.97, 261.06, -83.60},
@@ -83,51 +83,3 @@ Config.ClothingStore = {
 }
 
 
-Config.Language = {
-    [1] = {text = "Open clothing store",},
-    [2] = {text = "db",},--Command for reload cloths (now is /db or full /dbs)
-    [3] = {text = "Clothing store",},
-    [4] = {text = "Price : ",},
-    [5] = {text = "Turn left",},
-    [6] = {text = "Turn right",},
-    [7] = {text = "Turn down",},
-    [8] = {text = "Turn up",},
-    [9] = {text = "Zoom +",},
-    [10] = {text = "Zoom -",},
-    [11] = {text = "You dont have money",},
-
-    --Commands
-    [200] = {text = "hats",},
-    [201] = {text = "glass",},
-    [202] = {text = "scarf",},
-    [203] = {text = "mask",},
-    [204] = {text = "necktie",},
-    [205] = {text = "shirt",},
-    [206] = {text = "suspenders",},
-    [208] = {text = "vest",},
-    [209] = {text = "coat",},
-    [211] = {text = "poncho",},
-    [212] = {text = "cloak",},
-    [213] = {text = "glove",},
-    [214] = {text = "rings",},
-    [216] = {text = "bracelet",},
-    [217] = {text = "holster",},
-    [218] = {text = "holsteraccesorie",},
-    [219] = {text = "belt",},
-    [220] = {text = "buckle",},
-    [221] = {text = "secondholster",},
-    [222] = {text = "pant",},
-    [223] = {text = "spats",},
-    [224] = {text = "skirt",},
-    [225] = {text = "chaps",},
-    [226] = {text = "boots",},
-    [227] = {text = "spurs",},
-    [228] = {text = "gauntlets",},
-    [229] = {text = "accesories",},
-    [230] = {text = "bags",},
-    [231] = {text = "ammobelt",},
-    [232] = {text = "unwear",},
-    [233] = {text = "wear",},
-    [234] = {text = "bandana",},
-    [235] = {text = "sleeves",},
-}

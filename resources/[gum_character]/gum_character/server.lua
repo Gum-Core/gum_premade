@@ -39,6 +39,7 @@ AddEventHandler('gum_character:select_char', function(charid, skin_table, outfit
 	TriggerClientEvent("gum_clothes:send_outfit", tonumber(_source), skin_table, outfit_table)
 	User.setUsedCharacter(tonumber(_source), charid)
 end)
+
 Inventory.RegisterUsableItem("Hair_Pomade", function(data)
 	Inventory.subItem(data.source, "Hair_Pomade", 1)
 	TriggerClientEvent("gum_character:hairPomade", tonumber(data.source))

@@ -26,7 +26,7 @@ local blockSpamming = false
 
 function Button_Prompt()
 	Citizen.CreateThread(function()
-		local str = Config.Language[0].text
+		local str = _U('0')
 		PickItemGround = Citizen.InvokeNative(0x04F97DE45A519419)
 		PromptSetControlAction(PickItemGround, 0x27D1C284)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -90,16 +90,16 @@ AddEventHandler('gum_inventory:get_storage', function(storage, itm, wpn, id, siz
 	for k,v in pairs(storage) do
 		if v.item == 'gold' then
 			if v.count == nil then
-				table.insert(storage_table, {weapon=false, label=Config.Language[1].text, item="gold", count=0, limit=0.2})
+				table.insert(storage_table, {weapon=false, label=_U('1'), item="gold", count=0, limit=0.2})
 			else
-				table.insert(storage_table, {weapon=false, label=Config.Language[1].text, item="gold", count=(math.floor(v.count*10)/10), limit=0.2})
+				table.insert(storage_table, {weapon=false, label=_U('1'), item="gold", count=(math.floor(v.count*10)/10), limit=0.2})
 			end
 		end
 		if v.item == 'money' then
 			if v.count == nil then
-				table.insert(storage_table, {weapon=false, label=Config.Language[2].text, item="money", count=0, limit=0.2})
+				table.insert(storage_table, {weapon=false, label=_U('2'), item="money", count=0, limit=0.2})
 			else
-				table.insert(storage_table, {weapon=false, label=Config.Language[2].text, item="money", count=(math.floor(v.count*10)/10), limit=0.2})
+				table.insert(storage_table, {weapon=false, label=_U('2'), item="money", count=(math.floor(v.count*10)/10), limit=0.2})
 			end
 		end
 		if v.name == nil then
@@ -125,16 +125,16 @@ AddEventHandler('gum_inventory:refresh_storage', function(storage, itm, wpn,id)
 	for k,v in pairs(storage) do
 		if v.item == 'gold' then
 			if v.count == nil then
-				table.insert(storage_table, {weapon=false, label=Config.Language[1].text, item="gold", count=0, limit=0.2})
+				table.insert(storage_table, {weapon=false, label=_U('1'), item="gold", count=0, limit=0.2})
 			else
-				table.insert(storage_table, {weapon=false, label=Config.Language[1].text, item="gold", count=(math.floor(v.count*10)/10), limit=0.2})
+				table.insert(storage_table, {weapon=false, label=_U('1'), item="gold", count=(math.floor(v.count*10)/10), limit=0.2})
 			end
 		end
 		if v.item == 'money' then
 			if v.count == nil then
-				table.insert(storage_table, {weapon=false, label=Config.Language[2].text, item="money", count=0, limit=0.2})
+				table.insert(storage_table, {weapon=false, label=_U('2'), item="money", count=0, limit=0.2})
 			else
-				table.insert(storage_table, {weapon=false, label=Config.Language[2].text, item="money", count=(math.floor(v.count*10)/10), limit=0.2})
+				table.insert(storage_table, {weapon=false, label=_U('2'), item="money", count=(math.floor(v.count*10)/10), limit=0.2})
 			end
 		end
 		if v.name == nil then
@@ -274,7 +274,7 @@ RegisterNUICallback('transfer_from_storage', function(data, cb)
 										TriggerServerEvent("gum_inventory:transfer_item_from_storage", data.item, transferCount, id_container, data.itemId, nil)
 									end
 								else
-									exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[47].text, 'money', 2000)
+									exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('47'), 'money', 2000)
 								end
 							else
 								Show_Other(true, id_container, storage_table, money_state, size)
@@ -291,7 +291,7 @@ RegisterNUICallback('transfer_from_storage', function(data, cb)
 			if data.used == 1 then
 				Show_Other(true, id_container, storage_table, money_state, size)
 				SendNUIMessage({type = "cleanTransfer"})
-				exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[7].text, 'pistol', 2000)
+				exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('7'), 'pistol', 2000)
 			else
 				TriggerServerEvent("gum_inventory:transfer_weapon_from_storage", data.item, id_container)
 			end
@@ -360,7 +360,7 @@ RegisterNUICallback('transfer_to_storage', function(data, cb)
 					end
 				else
 					Show_Other(true, id_container, storage_table, money_state, size)
-					exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[8].text, 'pistol', 2000)
+					exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('8'), 'pistol', 2000)
 				end
 			else
 				SendNUIMessage({type = "input_data", status=true, data.item, count=data.count})
@@ -389,7 +389,7 @@ RegisterNUICallback('transfer_to_storage', function(data, cb)
 										end
 									else
 										Show_Other(true, id_container, storage_table, money_state, size)
-										exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[8].text, 'pistol', 2000)
+										exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('8'), 'pistol', 2000)
 									end
 								else
 							
@@ -410,11 +410,11 @@ RegisterNUICallback('transfer_to_storage', function(data, cb)
 															TriggerServerEvent("gum_inventory:transfer_item_to_storage", data.item, transferCount, id_container, data.itemId, nil)
 														end
 													else
-														exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[47].text, 'money', 2000)
+														exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('47'), 'money', 2000)
 													end
 												else
 													Show_Other(true, id_container, storage_table, money_state, size)
-													exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[8].text, 'pistol', 2000)
+													exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('8'), 'pistol', 2000)
 												end
 											else
 												Show_Other(true, id_container, storage_table, money_state, size)
@@ -434,7 +434,7 @@ RegisterNUICallback('transfer_to_storage', function(data, cb)
 		else
 			if data.used == 1 then
 				Show_Other(true, id_container, storage_table, money_state, size)
-				exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[7].text, 'pistol', 2000)
+				exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('7'), 'pistol', 2000)
 			else
 				TriggerServerEvent("gum_inventory:transfer_weapon_to_storage", data.id, data.item, id_container)
 			end
@@ -1298,7 +1298,7 @@ RegisterNUICallback('show_weapon', function(data, cb)
 		  SetNuiFocus(false, false)
 		  guiEnabled = false
 	else
-		exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[11].text, 'pistol', 2000)
+		exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('11'), 'pistol', 2000)
 	end
 end)
 
@@ -1379,12 +1379,12 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 						TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 0)
 						RemoveWeaponFromPed(PlayerPedId(), GetHashKey(data.model))
 						weapon_first_used = false
-						-- exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[20].text.."", 'bag', 1000)
+						-- exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('20').."", 'bag', 1000)
 						equip_spam = false
 						can_save = true
 						return false
 					else
-						-- exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[45].text.."", 'bag', 1000)
+						-- exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('45').."", 'bag', 1000)
 						equip_spam = false
 						can_save = true
 						return false
@@ -1398,7 +1398,7 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 					TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 0)
 					RemoveWeaponFromPed(PlayerPedId(), GetHashKey(data.model))
 					weapon_second_used = false
-					--exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[19].text.."", 'bag', 1000)
+					--exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('19').."", 'bag', 1000)
 					can_save = true
 					equip_spam = false
 					return false
@@ -1412,7 +1412,7 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 					TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 0)
 					RemoveWeaponFromPed(PlayerPedId(), GetHashKey(data.model))
 					rifle_first_used = false
-					--exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[22].text.."", 'bag', 1000)
+					--exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('22').."", 'bag', 1000)
 					can_save = true
 					equip_spam = false
 					return false
@@ -1426,7 +1426,7 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 					TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 0)
 					RemoveWeaponFromPed(PlayerPedId(), GetHashKey(data.model))
 					rifle_second_used = false
-					--exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[23].text.."", 'bag', 1000)
+					--exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('23').."", 'bag', 1000)
 					can_save = true
 					equip_spam = false
 					return false
@@ -1439,7 +1439,7 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 						end
 						TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 0)
 						RemoveWeaponFromPed(PlayerPedId(), GetHashKey(data.model))
-						--exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[21].text.."", 'bag', 1000)
+						--exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('21').."", 'bag', 1000)
 						equip_spam = false
 						can_save = true
 						return false
@@ -1458,7 +1458,7 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 							Citizen.InvokeNative(0xFCCC886EDE3C63EC, PlayerPedId(), false, false, false)
 							TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 1)
 							weapon_first_used = v.name
-							--exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[12].text.."", 'bag', 1000)
+							--exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('12').."", 'bag', 1000)
 							can_save = true
 							equip_spam = false
 						elseif weapon_second_used == false then
@@ -1471,7 +1471,7 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 							Citizen.InvokeNative(0xFCCC886EDE3C63EC, PlayerPedId(), false, false, false)
 							TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 1)
 							weapon_second_used = v.name
-							--exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[13].text.."", 'bag', 1000)
+							--exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('13').."", 'bag', 1000)
 							can_save = true
 							equip_spam = false
 						end
@@ -1488,7 +1488,7 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 						SetDirtToWeapon(v.id, v.conditionlevel)
 						Citizen.InvokeNative(0xFCCC886EDE3C63EC, PlayerPedId(), false, false, false)
 						TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 1)
-						--exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[18].text.."", 'bag', 1000)
+						--exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('18').."", 'bag', 1000)
 						can_save = true
 						equip_spam = false
 					end
@@ -1501,7 +1501,7 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 						Citizen.InvokeNative(0xFCCC886EDE3C63EC, PlayerPedId(), false, false, false)
 						TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 1)
 						rifle_first_used = v.name
-						--exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[15].text.."", 'bag', 1000)
+						--exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('15').."", 'bag', 1000)
 						can_save = true
 						equip_spam = false
 					elseif rifle_second_used == false then
@@ -1511,7 +1511,7 @@ RegisterNUICallback('use_UseWeapon', function(data, cb)
 						Citizen.InvokeNative(0xFCCC886EDE3C63EC, PlayerPedId(), false, false, false)
 						TriggerServerEvent("gum_inventory:send_state_weapon", data.id, 1)
 						rifle_second_used = v.name
-						--exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[16].text.."", 'bag', 1000)
+						--exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('16').."", 'bag', 1000)
 						can_save = true
 						equip_spam = false
 					end
@@ -1712,17 +1712,17 @@ Citizen.CreateThread(function()
 							if v.item ~= "money" and v.item ~= "gold" then
 								for key,value in pairs(itm_table) do
 									if value.item == v.item then
-										local item_name = CreateVarString(10, 'LITERAL_STRING', ""..Config.Language[24].text.." : "..v.count.."x "..value.label.."")
+										local item_name = CreateVarString(10, 'LITERAL_STRING', "".._U('24').." : "..v.count.."x "..value.label.."")
 										PromptSetActiveGroupThisFrame(buttons_prompt, item_name)
 									end
 								end
 							else
 								if v.item == "money" then
-									local item_name = CreateVarString(10, 'LITERAL_STRING', ""..Config.Language[26].text.." : "..v.count.."$")
+									local item_name = CreateVarString(10, 'LITERAL_STRING', "".._U('26').." : "..v.count.."$")
 									PromptSetActiveGroupThisFrame(buttons_prompt, item_name)
 								else
 									if v.item == "gold" then
-										local item_name = CreateVarString(10, 'LITERAL_STRING', ""..Config.Language[25].text.." : "..v.count.."G")
+										local item_name = CreateVarString(10, 'LITERAL_STRING', "".._U('25').." : "..v.count.."G")
 										PromptSetActiveGroupThisFrame(buttons_prompt, item_name)
 									end
 								end
@@ -1730,7 +1730,7 @@ Citizen.CreateThread(function()
 						else
 							for key,value in pairs(wp_table) do
 								if value.item == v.weapon_model then
-									local item_name = CreateVarString(10, 'LITERAL_STRING', ""..Config.Language[27].text.." : "..value.label)
+									local item_name = CreateVarString(10, 'LITERAL_STRING', "".._U('27').." : "..value.label)
 									PromptSetActiveGroupThisFrame(buttons_prompt, item_name)
 								end
 							end
@@ -1772,7 +1772,7 @@ Citizen.CreateThread(function()
 
 											Citizen.Wait(1000)
 										else
-											exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[47].text, 'money', 2000)
+											exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('47'), 'money', 2000)
 										end
 									end
 								else
@@ -1942,8 +1942,8 @@ Citizen.CreateThread(function()
 					end
 
 					local promptGroup = PromptGetGroupIdForTargetEntity(tgt1)
-					player_prompt = Uiprompt:new(`INPUT_CONTEXT_X`, ""..Config.Language[28].text.."", promptGroup)
-					player_prompt2 = Uiprompt:new(`INPUT_INTERACT_OPTION1`, ""..Config.Language[29].text.."", promptGroup)
+					player_prompt = Uiprompt:new(`INPUT_CONTEXT_X`, "".._U('28').."", promptGroup)
+					player_prompt2 = Uiprompt:new(`INPUT_INTERACT_OPTION1`, "".._U('29').."", promptGroup)
 					if canHostage ~= false then
 						player_prompt3 = Uiprompt:new(`INPUT_PROMPT_PAGE_NEXT`, "Hostage", promptGroup)
 						if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, `INPUT_PROMPT_PAGE_NEXT`) then
@@ -2194,12 +2194,12 @@ RegisterNUICallback('give_checked_item', function(data, cb)
 							-- Citizen.Wait(1000)
 							-- TriggerServerEvent("gumCore:giveItem", data.id, data.item, data.count, GetPlayerServerId(PlayerId()))
 						else
-							exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[30].text.."", 'bag', 2000)
+							exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('30').."", 'bag', 2000)
 						end
 					end
 				end
 			else
-				exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[31].text.."", 'bag', 2000)
+				exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('31').."", 'bag', 2000)
 			end
 		else
 			if data.item == "money" then
@@ -2229,7 +2229,7 @@ RegisterNUICallback('give_checked_item', function(data, cb)
 					SetNuiFocus(false, false)
 					guiEnabled = false
 				else
-					exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[32].text.."", 'bag', 2000)
+					exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('32').."", 'bag', 2000)
 				end
 			end
 		end
@@ -2356,7 +2356,7 @@ RegisterNUICallback('drop_item', function(data, cb)
 								SetNuiFocus(false, false)
 								guiEnabled = false
 							else
-								exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[33].text.."", 'bag', 2000)
+								exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('33').."", 'bag', 2000)
 							end
 						end
 					end
@@ -2374,7 +2374,7 @@ RegisterNUICallback('drop_item', function(data, cb)
 							SetNuiFocus(false, false)
 							guiEnabled = false
 						else
-							exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[34].text.."", 'bag', 2000)
+							exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('34').."", 'bag', 2000)
 						end
 					else
 						if tonumber(gold_state) >= tonumber(data.count) then
@@ -2389,12 +2389,12 @@ RegisterNUICallback('drop_item', function(data, cb)
 							SetNuiFocus(false, false)
 							guiEnabled = false
 						else
-							exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[35].text.."", 'bag', 2000)
+							exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('35').."", 'bag', 2000)
 						end
 					end
 				end
 			else
-				exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[31].text.."", 'bag', 2000)
+				exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('31').."", 'bag', 2000)
 			end
 		else
 			if tonumber(data.count) == 1 then
@@ -2412,16 +2412,16 @@ RegisterNUICallback('drop_item', function(data, cb)
 							SetNuiFocus(false, false)
 							guiEnabled = false
 						else
-							exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[36].text.."", 'bag', 2000)
+							exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('36').."", 'bag', 2000)
 						end
 					end
 				end
 			else
-				exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[37].text.."", 'bag', 2000)
+				exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('37').."", 'bag', 2000)
 			end
 		end
 	else
-		exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, ""..Config.Language[37].text.."", 'bag', 2000)
+		exports['gum_notify']:DisplayLeftNotification(_U('10'), "".._U('37').."", 'bag', 2000)
 	end
 end)
 local giveItemEnable = false
@@ -2809,7 +2809,7 @@ RegisterNUICallback('transferToPlayer', function(data, cb)
 	idPlayerForItem = playerDragId
 	if idPlayerForItem ~= 0 then
 		if data.item == "money" then
-			TriggerEvent("guminputs:getInput", Config.Language[2].text, Config.Language[4].text, function(cb)
+			TriggerEvent("guminputs:getInput", _U('2'), _U('4'), function(cb)
 				local count_money = tonumber(cb)
 				if count_money ~= nil then
 					if count_money ~= 'close' and count_money > 0 and data.count >= count_money then
@@ -2822,7 +2822,7 @@ RegisterNUICallback('transferToPlayer', function(data, cb)
 				end
 			end)
 		elseif data.item == "gold" then
-			TriggerEvent("guminputs:getInput", Config.Language[3].text, Config.Language[5].text, function(cb)
+			TriggerEvent("guminputs:getInput", _U('3'), _U('5'), function(cb)
 				local count_gold = tonumber(cb)
 				if count_gold ~= nil then
 					if count_gold ~= 'close' and count_gold > 0 and data.count >= count_gold then
@@ -2853,7 +2853,7 @@ RegisterNUICallback('transferToPlayer', function(data, cb)
 						end
 						clearThisFunction()
 					else
-						TriggerEvent("guminputs:getInput", Config.Language[3].text, Config.Language[6].text, function(cb)
+						TriggerEvent("guminputs:getInput", _U('3'), _U('6'), function(cb)
 							local count_item = tonumber(cb)
 							if count_item ~= nil then
 								if count_item ~= 'close' and count_item > 0 and data.count >= count_item then
@@ -2881,7 +2881,7 @@ RegisterNUICallback('transferToPlayer', function(data, cb)
 				else
 					if data.used == 1 then
 						clearThisFunction()
-						exports['gum_notify']:DisplayLeftNotification(Config.Language[10].text, Config.Language[7].text, 'pistol', 2000)
+						exports['gum_notify']:DisplayLeftNotification(_U('10'), _U('7'), 'pistol', 2000)
 					else
 						for k,v in pairs(weapon_table) do
 							if tonumber(data.id) == tonumber(v.id) then

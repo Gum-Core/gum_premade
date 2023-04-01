@@ -128,12 +128,12 @@ AddEventHandler('gumCore:openstorage', function(source, id)
 		for c,d in pairs(b) do
 			if d == id then
 				if playerIsActive(a) == true then
-					TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[39].text, 'bag', 2500)
+					TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('39'), 'bag', 2500)
 				else
 					for k,v in pairs(openstorages[a]) do
 						table.remove(openstorages[a], k)
 					end
-					TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[46].text, 'bag', 2500)
+					TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('46'), 'bag', 2500)
 				end
 				return false
 			end
@@ -148,7 +148,7 @@ AddEventHandler('gumCore:openstorage', function(source, id)
 			table.insert(openstorages[_source], id)
 			TriggerClientEvent("gum_inventory:get_storage", tonumber(_source), json.decode(resultStorage[1].items), itm_table, wpn_table, id, resultStorage[1].size)
 		else
-			TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[38].text, 'bag', 2500)
+			TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('38'), 'bag', 2500)
 		end
 	end)
 
@@ -374,7 +374,7 @@ AddEventHandler('gum_inventory:transfer_item_from_storage', function(item, count
 
 					else
 						TriggerEvent("gum_inventory:get_storage_srv", tonumber(_source), id)
-						TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[41].text, 'bag', 2500)
+						TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('41'), 'bag', 2500)
 					end
 				end)
 			end
@@ -427,7 +427,7 @@ AddEventHandler('gum_inventory:transfer_money_to_storage', function(item, count,
 			end)
 		else
 			TriggerEvent("gum_inventory:get_storage_srv", tonumber(_source), id)
-			TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[40].text, 'bag', 2500)
+			TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('40'), 'bag', 2500)
 		end
 	else
 		gumCore.Error("Player with CharID : "..charid.." \nSometing is wrong : "..id.." with transfering money to storage")
@@ -477,7 +477,7 @@ AddEventHandler('gum_inventory:transfer_gold_to_storage', function(item, count, 
 			end)
 		else
 			TriggerEvent("gum_inventory:get_storage_srv", tonumber(_source), id)
-			TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[40].text, 'bag', 2500)
+			TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('40'), 'bag', 2500)
 		end
 	else
 		gumCore.Error("Player with CharID : "..charid.." \nSometing is wrong : "..id.." with transfering gold to storage")
@@ -635,7 +635,7 @@ AddEventHandler('gum_inventory:transfer_weapon_from_storage', function(item, id)
 				end)
 			else
 				TriggerEvent("gum_inventory:get_storage_srv", tonumber(_source), id)
-				TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[41].text, 'bag', 2500)
+				TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('41'), 'bag', 2500)
 			end
 		end)
 	else
@@ -760,8 +760,8 @@ AddEventHandler('gumCore:addItem', function(source, name, count, metaDataData, p
 	if playerBackup ~= nil then
 		if tonumber(in_inventory[tonumber(_source)]+in_inventory_count[tonumber(_source)]) >= Config.Max_Items then
 			Inventory.addItem(tonumber(playerBackup), name, tonumber(count))
-			TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[41].text, 'bag', 2500)
-			TriggerClientEvent("gum_notify:notify", tonumber(playerBackup), Config.Language[10].text, Config.Language[42].text, 'bag', 2500)
+			TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('41'), 'bag', 2500)
+			TriggerClientEvent("gum_notify:notify", tonumber(playerBackup), _U('10'), _U('42'), 'bag', 2500)
 			return false
 		end
 		if metaDataData ~= nil then
@@ -782,7 +782,7 @@ AddEventHandler('gumCore:addItem', function(source, name, count, metaDataData, p
 		end
 	else
 		if tonumber(in_inventory[tonumber(_source)]+count_calc[_source]) >= Config.Max_Items then
-			TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[41].text, 'bag', 2500)
+			TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('41'), 'bag', 2500)
 			return false
 		end
 		if metaDataData ~= nil then
@@ -1045,9 +1045,9 @@ AddEventHandler('gum_inventory:give_money', function(who_get, how_much, who_send
 		TriggerEvent("gum_inventory:get_items_sec", tonumber(who_send))
 		TriggerEvent("gum_inventory:get_items_sec", tonumber(who_get))
 		gumCore.Debug("CharIdentifier : "..charid.." give money to "..charid2.." : "..how_much.."$")
-		TriggerClientEvent("gum_notify:notify", tonumber(who_get), Config.Language[10].text, "Dostal jsi : "..how_much.." $", 'bag', 3500)
+		TriggerClientEvent("gum_notify:notify", tonumber(who_get), _U('10'), ": "..how_much.." $", 'bag', 3500)
 	else
-		TriggerClientEvent("gum_notify:notify", tonumber(source), Config.Language[10].text, Config.Language[40].text, 'bag', 2500)
+		TriggerClientEvent("gum_notify:notify", tonumber(source), _U('10'), _U('40'), 'bag', 2500)
 	end
 end)
 
@@ -1070,7 +1070,7 @@ AddEventHandler('gum_inventory:give_gold', function(who_get, how_much, who_send)
 		TriggerEvent("gum_inventory:get_items_sec", tonumber(who_get))
 		gumCore.Debug("CharIdentifier : "..charid.." give gold to "..charid2.." : "..how_much.."$")
 	else
-		TriggerClientEvent("gum_notify:notify", tonumber(source), Config.Language[10].text, Config.Language[40].text, 'bag', 2500)
+		TriggerClientEvent("gum_notify:notify", tonumber(source), _U('10'), _U('40'), 'bag', 2500)
 	end
 end)
 
@@ -1253,7 +1253,7 @@ AddEventHandler('gumCore:giveWeapon', function(source, weaponid, target)
 	exports.ghmattimysql:execute('SELECT id,identifier,name,ammo,used,comps,dirtlevel,conditionlevel FROM loadout WHERE charidentifier = @charidentifier AND identifier = @identifier' , {['charidentifier'] = charid, ['identifier'] = identifier}, function(result)
 		if result ~= nil then
 			if in_inventory_weapons[tonumber(_source)] >= Config.Max_Weapons and tonumber(target) == 0 then
-				TriggerClientEvent("gum_notify:notify", tonumber(_source), Config.Language[10].text, Config.Language[44].text, 'bag', 2500)
+				TriggerClientEvent("gum_notify:notify", tonumber(_source), _U('10'), _U('44'), 'bag', 2500)
 				return false
 			end
 			if target ~= nil then

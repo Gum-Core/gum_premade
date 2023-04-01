@@ -9,20 +9,27 @@ files {
 }
 
 client_scripts {
+  'locale.lua',
+  'lang/*.lua',
   "@uiprompt/uiprompt.lua",
   'config.lua',
   'client.lua',
 }
+
 shared_scripts {
   "cfg/weapons.lua",
 }
+
 server_exports{'gum_inventoryApi'} 
 
 server_scripts {
+  'locale.lua',
+  'lang/*.lua',
   'config.lua',
   'gumInventoryAPI.lua',
   'server.lua',
 }
+
 ui_page 'html/index.html'
 
 files {

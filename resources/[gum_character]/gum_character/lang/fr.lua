@@ -1,0 +1,35 @@
+Locales["fr"] = {
+    ['1'] = "Création de personnage",
+    ['167'] = "Changer de sexe",
+    ['168'] = "Selectionner ce personnage",
+    ['169'] = "Gauche",
+    ['170'] = "Droite",
+    ['171'] = "Bas",
+    ['172'] = "Haut",
+    ['173'] = "Zoom +",
+    ['174'] = "Zoom -",
+    ['175'] = "Homme",
+    ['176'] = "Femme",--
+    ['177'] = "Selectionner ce personnage",
+    ['183'] = "Vous n'avez pas choisi de genre",
+    ['184'] = "Vous n'avez pas choisi votre couleur des yeux",
+    ['185'] = "Vous n'avez pas choisi votre corpulence.",
+    ['186'] = "Vous n'avez pas choisi d'ethnie.",
+    ['187'] = "Vous n'avez pas choisi de textures de corps",
+    ['188'] = "Vous n'avez pas choisi de textures de jambes",
+    ['189'] = "Vous n'avez pas renseigner de Prenom et Nom",
+    ['190'] = "Sélection de personnage",
+    ['191'] = "Vous changez de personnage, patientez 10 secondes.",
+    ['192'] = "Vous avez atteint la limite de création de personnage.",
+    
+    ['193'] = "Vous devez ajouter un nom",
+    ['194'] = "Vous devez choisir une ethnie",
+    ['195'] = "Vous devez choisir une texture de corps",
+    ['196'] = "Vous devez choisir une texture de jambes",
+    ['197'] = "Vous devez choisir une corpulence",
+    ['198'] = "Vous devez choisir votre taille",
+    ['199'] = "Vous devez choisir des yeux",
+    ['200'] = "Vous devez choisir une texture de tête",
+}
+
+

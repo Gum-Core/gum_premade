@@ -22,11 +22,11 @@
 <body>
   <div class="hotbar" id="hotbar">
     <div id="slot0"><div class="top-right">+</div></div>
-    <div id="slot1" onclick="clear_hotbar(1)"><div class="top-right">ě</div></div>
-    <div id="slot2" onclick="clear_hotbar(2)"><div class="top-right">š</div></div>
-    <div id="slot3" onclick="clear_hotbar(3)"><div class="top-right">č</div></div>
-    <div id="slot4" onclick="clear_hotbar(4)"><div class="top-right">ř</div></div>
-    <div id="slot5"  onclick="clear_hotbar(5)"><div class="top-right">ž</div></div>
+    <div id="slot1" onclick="clear_hotbar(1)"><div class="top-right">2</div></div>
+    <div id="slot2" onclick="clear_hotbar(2)"><div class="top-right">3</div></div>
+    <div id="slot3" onclick="clear_hotbar(3)"><div class="top-right">4</div></div>
+    <div id="slot4" onclick="clear_hotbar(4)"><div class="top-right">5</div></div>
+    <div id="slot5"  onclick="clear_hotbar(5)"><div class="top-right">6</div></div>
   </div>
   <div id="container">
       <h2 id="header" style="text-align:center"></h2>
@@ -73,7 +73,7 @@
     </div>
 
   <div id="container_other">
-    <h2 id="header_container" style="text-align:center">Uložiště</h2>
+    <h2 id="header_container" style="text-align:center">Stockage</h2>
     <input id="myInput" type="text" onchange="filterTextInput()"/>
 
     <div id ="id03"></div>
@@ -86,16 +86,16 @@
     <div class="grid2" id="playerData">
     </div>
     <div id="context-menu">
-      <div class="content_button" onclick="transferItem()"><center>Darovat</center></div>
+      <div class="content_button" onclick="transferItem()"><center>Give</center></div>
       <div class="content_button" onclick="show_hotbar(document.getElementById('input_size1').value)" >Hotbar <input type="text" value = "1" id="input_size1"></div>
-      <div class="content_button" onclick="DropItem(document.getElementById('input_size2').value)" >Zahodit <input type="text" value = "1" id="input_size2"></div>
+      <div class="content_button" onclick="DropItem(document.getElementById('input_size2').value)" >Throw away <input type="text" value = "1" id="input_size2"></div>
   </div>
   <div id="input_data">
-    <div id="input_text">Kolik věcí chceš přesunout?</div>
-    <div id="button1" onclick="transferOneItem()"><center>1 kus</center></div>
-    <div id="button2" onclick="transferAllItem()"><center>Vše</center></div>
-    <div id="button3" onclick="transferAcceptItem()"><center>Potvrdit</center></div>
-    <div id="button4" onclick="transferLeaveItem()"><center>Odejít</center></div>
+    <div id="input_text">How many things do you want to move??</div>
+    <div id="button1" onclick="transferOneItem()"><center>1 piece</center></div>
+    <div id="button2" onclick="transferAllItem()"><center>All</center></div>
+    <div id="button3" onclick="transferAcceptItem()"><center>Confirm</center></div>
+    <div id="button4" onclick="transferLeaveItem()"><center>Leave</center></div>
     <input type="inputType" id="input_type">
     </div>
   <script>

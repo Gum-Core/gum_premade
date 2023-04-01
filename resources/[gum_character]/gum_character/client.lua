@@ -216,7 +216,7 @@ AddEventHandler('gum_character:selected_char', function()
 end)
 
 function getMaleFromLang()
-	return Config.Language[175].text
+	return _U('175')
 end
 RegisterNetEvent('gum_character:saveBarberAction')
 AddEventHandler('gum_character:saveBarberAction', function(skin_table_receive)
@@ -310,7 +310,7 @@ RegisterCommand('dbs', function()
 end)
 
 function Make_Data(gender)
-    if gender == Config.Language[175].text then
+    if gender == _U('175') then
         Skin_Table["sex"] = "mp_male"
         for k,v in pairs(Config_2.Clothes) do
             if v.ped_type == "male" and v.is_multiplayer == true and v.category_hashname == "hair" then
@@ -495,7 +495,7 @@ end
 
 function Button_Prompt()
 	Citizen.CreateThread(function()
-        local str = ''..Config.Language[167].text..''
+        local str = ''.._U('167')..''
         ChangeCharPrompt = Citizen.InvokeNative(0x04F97DE45A519419)
         PromptSetControlAction(ChangeCharPrompt, 0x27D1C284)
         str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -507,7 +507,7 @@ function Button_Prompt()
         PromptRegisterEnd(ChangeCharPrompt)
 	end)
     Citizen.CreateThread(function()
-        local str = ''..Config.Language[168].text..''
+        local str = ''.._U('168')..''
         SelectPrompt = Citizen.InvokeNative(0x04F97DE45A519419)
         PromptSetControlAction(SelectPrompt, 0x0522B243)
         str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -521,7 +521,7 @@ function Button_Prompt()
 end
 function Button_Prompt_2()
 	Citizen.CreateThread(function()
-		local str = ''..Config.Language[169].text..''
+		local str = ''.._U('169')..''
 		RotateLPrompt = PromptRegisterBegin()
 		PromptSetControlAction(RotateLPrompt, 0x20190AB4)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -533,7 +533,7 @@ function Button_Prompt_2()
 		PromptRegisterEnd(RotateLPrompt)
 	end)
 	Citizen.CreateThread(function()
-		local str = ''..Config.Language[170].text..''
+		local str = ''.._U('170')..''
 		RotateRPrompt = PromptRegisterBegin()
 		PromptSetControlAction(RotateRPrompt, 0xDEB34313)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -545,7 +545,7 @@ function Button_Prompt_2()
 		PromptRegisterEnd(RotateRPrompt)
 	end)
     Citizen.CreateThread(function()
-		local str = ''..Config.Language[171].text..''
+		local str = ''.._U('171')..''
 		UpPrompt = Citizen.InvokeNative(0x04F97DE45A519419)
 		PromptSetControlAction(UpPrompt, 0x05CA7C52)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -557,7 +557,7 @@ function Button_Prompt_2()
 		PromptRegisterEnd(UpPrompt)
 	end)
 	Citizen.CreateThread(function()
-		local str = ''..Config.Language[172].text..''
+		local str = ''.._U('172')..''
 		DownPrompt = Citizen.InvokeNative(0x04F97DE45A519419)
 		PromptSetControlAction(DownPrompt, 0x6319DB71)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -569,7 +569,7 @@ function Button_Prompt_2()
 		PromptRegisterEnd(DownPrompt)
 	end)
     Citizen.CreateThread(function()
-        local str = ''..Config.Language[173].text..''
+        local str = ''.._U('173')..''
         Zoom1Prompt = PromptRegisterBegin()
         PromptSetControlAction(Zoom1Prompt, 0xE885EF16)
         str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -581,7 +581,7 @@ function Button_Prompt_2()
         PromptRegisterEnd(Zoom1Prompt)
     end)
     Citizen.CreateThread(function()
-        local str = ''..Config.Language[174].text..''
+        local str = ''.._U('174')..''
         Zoom2Prompt = PromptRegisterBegin()
         PromptSetControlAction(Zoom2Prompt, 0x2277FAE9)
         str = CreateVarString(10, 'LITERAL_STRING', str)
@@ -936,7 +936,7 @@ Citizen.CreateThread(function()
             DrawLightWithRange(tonumber(string.format("%.2f", -559.25)), tonumber(string.format("%.2f", -3776.16)), tonumber(string.format("%.2f", 240.49)), 255, 255, 255, tonumber(string.format("%.2f", 10.0)), tonumber(string.format("%.2f", 20.0)))
             opt = 5
             if active_buttons_create_select == false then
-                local create_char = CreateVarString(10, 'LITERAL_STRING', ""..Config.Language[177].text.." "..char_text.."")
+                local create_char = CreateVarString(10, 'LITERAL_STRING', "".._U('177').." "..char_text.."")
                 PromptSetActiveGroupThisFrame(buttons_prompt, create_char)
             end
             if Citizen.InvokeNative(0x91AEF906BCA88877, 0, 0x27D1C284) then
@@ -944,11 +944,11 @@ Citizen.CreateThread(function()
                     spawm_protect = true
                     if male_selected == false then
                         male_selected = true
-                        char_text = Config.Language[175].text
+                        char_text = _U('175')
                         StartCam(-560.05, -3775.77, 239.35, -90.00, 50.0)
                     else
                         male_selected = false
-                        char_text = Config.Language[176].text
+                        char_text = _U('176')
                         StartCam(-560.05, -3776.57, 239.35, -90.00, 50.0)
                     end
                     Citizen.Wait(500)
@@ -972,7 +972,7 @@ Citizen.CreateThread(function()
                         --Open_Basic_Menu()
                         TriggerEvent("gum_creator:new_char", char_text)
                     else
-                        exports['gum_notify']:DisplayLeftNotification(""..Config.Language[1].text.."", ""..Config.Language[183].text.."", 'character', 2000)
+                        exports['gum_notify']:DisplayLeftNotification("".._U('1').."", "".._U('183').."", 'character', 2000)
                     end
                 end
             end
@@ -980,7 +980,7 @@ Citizen.CreateThread(function()
             DisableControlAction(0, 0x3076E97C, true)
             DisableControlAction(0, 0xCC1075A7, true)
             if active_buttons_create_make == false then
-                local create_char = CreateVarString(10, 'LITERAL_STRING', Config.Language[1].text)
+                local create_char = CreateVarString(10, 'LITERAL_STRING', _U('1'))
                 PromptSetActiveGroupThisFrame(buttons_prompt_2, create_char)
             end
         else
@@ -992,21 +992,21 @@ end)
 
 RegisterNUICallback('alert_to_notify', function(data, cb)
     if data.type == "name" then
-        exports['gum_notify']:DisplayLeftNotification(Config.Language[1].text, Config.Language[193].text, 'character', 1000)
+        exports['gum_notify']:DisplayLeftNotification(_U('1'), _U('193'), 'character', 1000)
     elseif data.type == "nation" then
-        exports['gum_notify']:DisplayLeftNotification(Config.Language[1].text, Config.Language[194].text, 'character', 1000)
+        exports['gum_notify']:DisplayLeftNotification(_U('1'), _U('194'), 'character', 1000)
     elseif data.type == "bodyTexture" then
-        exports['gum_notify']:DisplayLeftNotification(Config.Language[1].text, Config.Language[195].text, 'character', 1000)
+        exports['gum_notify']:DisplayLeftNotification(_U('1'), _U('195'), 'character', 1000)
     elseif data.type == "legsTexture" then
-        exports['gum_notify']:DisplayLeftNotification(Config.Language[1].text, Config.Language[196].text, 'character', 1000)
+        exports['gum_notify']:DisplayLeftNotification(_U('1'), _U('196'), 'character', 1000)
     elseif data.type == "bodyType" then
-        exports['gum_notify']:DisplayLeftNotification(Config.Language[1].text, Config.Language[197].text, 'character', 1000)
+        exports['gum_notify']:DisplayLeftNotification(_U('1'), _U('197'), 'character', 1000)
     elseif data.type == "waist" then
-        exports['gum_notify']:DisplayLeftNotification(Config.Language[1].text, Config.Language[198].text, 'character', 1000)
+        exports['gum_notify']:DisplayLeftNotification(_U('1'), _U('198'), 'character', 1000)
     elseif data.type == "eyes" then
-        exports['gum_notify']:DisplayLeftNotification(Config.Language[1].text, Config.Language[199].text, 'character', 1000)
+        exports['gum_notify']:DisplayLeftNotification(_U('1'), _U('199'), 'character', 1000)
     elseif data.type == "headTexture" then
-        exports['gum_notify']:DisplayLeftNotification(Config.Language[1].text, Config.Language[200].text, 'character', 1000)
+        exports['gum_notify']:DisplayLeftNotification(_U('1'), _U('200'), 'character', 1000)
     end
 end)
 
@@ -1190,7 +1190,7 @@ end)
 
 
 function Style_Head_Texture(what_type, number_val, gender, head_type) 
-    if gender == Config.Language[175].text then
+    if gender == _U('175') then
         for k,v in pairs(Config.DefaultChar["Male"][head_type]) do
             if k == what_type then
                 for x,y in pairs(v) do
@@ -1221,7 +1221,7 @@ end
 
 
 function Style_Body_Texture(what_type, number_val, gender, head_type) 
-    if gender == Config.Language[175].text then
+    if gender == _U('175') then
         for k,v in pairs(Config.DefaultChar["Male"][head_type]) do
             if k == what_type then
                 for x,y in pairs(v) do
@@ -1251,7 +1251,7 @@ function Style_Body_Texture(what_type, number_val, gender, head_type)
 end
 
 function Style_Legs_Texture(what_type, number_val, gender, head_type) 
-    if gender == Config.Language[175].text then
+    if gender == _U('175') then
         for k,v in pairs(Config.DefaultChar["Male"][head_type]) do
             if k == what_type then
                 for x,y in pairs(v) do
@@ -1355,7 +1355,7 @@ end
 
 function TakeCharacter(gender)
     Citizen.CreateThread(function()
-        if gender == Config.Language[175].text then
+        if gender == _U('175') then
             SetModel("mp_male")
             ApplyDefaultSkinCanaryEdition_2(PlayerPedId(), gender)
             Citizen.Wait(50)
@@ -1378,7 +1378,7 @@ end
 
 function ApplyDefaultSkinCanaryEdition_2(ped, gender)
     DeletePed(PlayerPedId())
-    if tostring(gender) == Config.Language[175].text then
+    if tostring(gender) == _U('175') then
         SetModel("mp_male")
         for k,v in pairs(Config.DefaultChar["Male"]) do
             if k == 1 then

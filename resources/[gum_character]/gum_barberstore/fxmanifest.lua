@@ -4,7 +4,10 @@ game "rdr3"
 exports {
 	'loading',
 }
+
 client_scripts {
+	'locale.lua',
+	'lang/*.lua',
 	'config.lua',
 	'full_database.lua',
 	'client.lua',
@@ -14,6 +17,7 @@ server_scripts {
 	'full_database.lua',
 	'server.lua',
 }
+
 ui_page 'html/index.html'
 
 files {
