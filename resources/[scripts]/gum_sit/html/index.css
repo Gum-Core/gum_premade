@@ -1,0 +1,236 @@
+@font-face {
+    font-family: crock;
+    src: url(crock.ttf);
+}
+
+* {
+    font-family: crock;
+    box-sizing: inherit;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
+#nameItem {
+    display: block;
+    position:absolute;
+    bottom: 30px;
+    left: 40px;
+    color: white;
+    /* text-align: left; */
+}
+#sitMenu {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: absolute;
+	width: 320px;
+	height: 450px;
+	top: 40%;
+    right: 15%;
+    font-size:15px;
+    background-image: url('itemlist.png');
+    background-size: 100% 100%;
+    animation: fadeIn;
+    animation-duration: 0.4s;
+} 
+
+#favorite {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: absolute;
+	width: 30px;
+	height: 30px;
+    right: 10px;
+    background-image: url('favorite.png');
+    background-size: 100% 100%;
+} 
+#favorite:hover {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: absolute;
+	width: 30px;
+	height: 30px;
+    right: 10px;
+    background-image: url('favoriteHover.png');
+    background-size: 100% 100%;
+} 
+
+#animInput {
+    position:absolute;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    width: 80%;
+    height: 25px;
+    left:20px;
+    top:10px;
+    margin-bottom: 12px;
+    color:white;
+    animation: fadeIn;
+    animation-duration: 0.4s;
+  }
+#sitCont li a {
+    position: absolute;
+    bottom: 9px;
+	width: 190px;
+    height: 20px;
+    left:2px;
+    color:white;
+    text-decoration: none;
+    animation: fadeIn;
+    animation-duration: 0.4s;
+}
+#sitMenuCont {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+	width: 280px;
+    left: -15px;
+	height: 380px;
+	top: 10px;
+    animation: fadeIn;
+    animation-duration: 0.4s;
+} 
+
+.item {
+    display: block;
+    position: relative;
+    width: 260px;
+    height: 30px;
+    margin: 5px;
+    color:white;
+    background-image: url('button.png');
+    background-size: 100% 100%;
+    animation: fadeIn;
+    animation-duration: 0.4s;
+}
+.item:hover {
+    display: block;
+    position: relative;
+    width: 260px;
+    height: 30px;
+    margin: 5px;
+    color:white;
+    background-image: url('sbutton.png');
+    background-size: 100% 100%;
+}
+
+#item {
+    display: block;
+    position: relative;
+    width: 160px;
+    height: 30px;
+    margin: 5px;
+    top:38px;
+    left:30px;
+    color:white;
+    background-image: url('button.png');
+    background-size: 100% 100%;
+    text-decoration: none;
+}
+#item:hover {
+    display: block;
+    position: relative;
+    width: 160px;
+    height: 30px;
+    margin: 5px;
+    color:white;
+    background-image: url('sbutton.png');
+    background-size: 100% 100%;
+    text-decoration: none;
+}
+
+
+
+#text {
+    position: absolute;
+    bottom: 1px;
+    text-align:left;
+    left: 30px;
+	width: 190px;
+}
+
+input, span{
+    outline: none;
+    bottom:50px;
+    left:280px;
+    position:absolute;
+    width:40px;
+    color:white;
+}
+input{
+    background:transparent;
+    z-index:2;
+}
+
+#text {
+    position: absolute;
+    bottom: 1px;
+    right: 45px;
+}
+
+#itemlist {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 400px;
+    height: 580px;
+    background-image: url('itemlist.png');
+    background-size: 100% 100%;
+    animation: fadeIn;
+    animation-duration: 0.4s;
+}
+
+#timer {
+    display: none;
+    position: absolute;
+    color: white;
+    top: 55.9%;
+    left: 48.2%;
+    animation: fadeIn;
+    animation-duration: 0.4s;
+}
+
+.item.muuri-item-dragging {
+    z-index: 3;
+}
+
+.item.muuri-item-releasing {
+    z-index: 2;
+}
+
+.item.muuri-item-hidden {
+    z-index: 0;
+}
+
+
+#bottom-right {
+    position: absolute;
+    bottom: 4px;
+    left: 2px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(73, 73, 73); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b3b3b3; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 10px;
+    background: rgb(39, 39, 39); 
+}
