@@ -16,7 +16,9 @@ Locales["it"] = {
     ['14'] = "Negozio di abbigliamento di Rodi",
     ['15'] = "Negozio di abbigliamento Black Water",
     ['16'] = "Negozio di abbigliamento",
-
+    ['17'] = "Conferma",
+    ['18'] = "Entra nello spogliatoio del tuo amico con il suo ID: ",
+    ['19'] = "Nome del tuo vestito: ",
     --Commands
     ['200'] = "hats",
     ['201'] = "glass",

@@ -40,11 +40,12 @@ local pricing_table = {}
 local buttons_prompt = GetRandomIntInRange(0, 0xffffff)
 local active = false
 local buttons_prompt2 = GetRandomIntInRange(0, 0xffffff)
+local buttons_prompt4 = GetRandomIntInRange(0, 0xffffff)
 local active2 = false
 local Clothe_Table_Backup = {}
 
---RegisterNetEvent("gum:SelectedCharacter")
---AddEventHandler("gum:SelectedCharacter", function(charid)
+RegisterNetEvent("gum:SelectedCharacter")
+AddEventHandler("gum:SelectedCharacter", function(charid)
     Citizen.CreateThread(function()
         Citizen.Wait(10000)
         for k,v in pairs(Config.ClothingStore) do
@@ -55,7 +56,7 @@ local Clothe_Table_Backup = {}
                 Citizen.InvokeNative(0x9CB1A1623062F402, blips, v["ClothingBlip"])
             end
         end
-        TriggerEvent('gum:ExecuteServerCallBack','gum_clothingstore:get_outfit', function(skintable, comptable)
+        TriggerEvent('gum:ExecuteServerCallBack','gum_clothingstore:get_only_outfit', function(skintable, comptable)
             if skintable ~= 0 and skintable ~= nil and comptable ~= 0 and comptable ~= nil then
                 Skin_Table = json.decode(skintable)
                 Clothe_Table = json.decode(comptable)
@@ -261,7 +262,22 @@ local Clothe_Table_Backup = {}
             end
         end
     end)
---end)
+end)
+
+function Button_Prompt3()
+    Citizen.CreateThread(function()
+        local str = _U('13')
+        cancelSeason = Citizen.InvokeNative(0x04F97DE45A519419)
+        PromptSetControlAction(cancelSeason, 0x27D1C284)
+        str = CreateVarString(10, 'LITERAL_STRING', str)
+        PromptSetText(cancelSeason, str)
+        PromptSetEnabled(cancelSeason, true)
+        PromptSetVisible(cancelSeason, true)
+        PromptSetHoldMode(cancelSeason, true)
+        PromptSetGroup(cancelSeason, buttons_prompt4)
+        PromptRegisterEnd(cancelSeason)
+	end)
+end
 
 function Button_Prompt()
 	Citizen.CreateThread(function()
@@ -276,6 +292,18 @@ function Button_Prompt()
         PromptSetGroup(Open_Store, buttons_prompt)
         PromptRegisterEnd(Open_Store)
 	end)
+    Citizen.CreateThread(function()
+        local str = _U('12')
+        Shared_Store = Citizen.InvokeNative(0x04F97DE45A519419)
+        PromptSetControlAction(Shared_Store, 0xA1ABB953)
+        str = CreateVarString(10, 'LITERAL_STRING', str)
+        PromptSetText(Shared_Store, str)
+        PromptSetEnabled(Shared_Store, true)
+        PromptSetVisible(Shared_Store, true)
+        PromptSetHoldMode(Shared_Store, true)
+        PromptSetGroup(Shared_Store, buttons_prompt)
+        PromptRegisterEnd(Shared_Store)
+	end)
 end
 
 RegisterNetEvent('gum_clothes:send_to_client')
@@ -286,21 +314,44 @@ AddEventHandler('gum_clothes:send_to_client', function(clothing_table,can_save)
         TriggerEvent("gum_character:send_data_back", Skin_Table, Clothe_Table, coords_save)
     end
 end)
-
+local season = false
+RegisterNetEvent("gum_clothing:joinSeason")
+AddEventHandler("gum_clothing:joinSeason", function(x,y,z)
+    season = true
+    SetEntityCoords(PlayerPedId(), x, y, z)
+end)
 Citizen.CreateThread(function()
     Button_Prompt()
     Button_Prompt2()
+    Button_Prompt3()
     while true do
         local optimalize = 1000
         local coords = GetEntityCoords(PlayerPedId())
         for k,v in pairs(Config.ClothingStore) do
             if GetDistanceBetweenCoords(coords.x, coords.y, coords.z, v["ClothingStore"][1], v["ClothingStore"][2], v["ClothingStore"][3], false) < 15 then
+                if season == true then 
+                    PromptSetActiveGroupThisFrame(buttons_prompt4, CreateVarString(10, 'LITERAL_STRING',  _U('16')))
+                    if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x27D1C284) then
+                        TriggerServerEvent("gum_clothing:clearSeason")
+                        SetEntityCoords(PlayerPedId(), v["ClothingEscape"][1], v["ClothingEscape"][2], v["ClothingEscape"][3])
+                        season = false
+                        Citizen.Wait(500)
+                    end
+                end
                 if GetDistanceBetweenCoords(coords.x, coords.y, coords.z, v["ClothingStore"][1], v["ClothingStore"][2], v["ClothingStore"][3], false) < 1.5 then
                     Citizen.InvokeNative(0x2A32FAA57B937173, -1795314153, v["ClothingStore"][1], v["ClothingStore"][2], v["ClothingStore"][3] - 1.8, 0, 0, 0, 0, 0, 0, 1.5, 1.5, 0.5, 179, 166, 122, 155, 0, 0, 2, 0, 0, 0, 0)
                     optimalize = 5
                     if active == false then
                         local item_name = CreateVarString(10, 'LITERAL_STRING', _U('3'))
                         PromptSetActiveGroupThisFrame(buttons_prompt, item_name)
+                    end
+                    if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0xA1ABB953) then
+                        TriggerEvent("guminputs:getInput", _U('17'), _U('18'), function(cb)
+                            if cb ~= nil then
+                                TriggerServerEvent("gum_clothing:joinSeason", cb, v["ClothingSpott"][1], v["ClothingSpott"][2], v["ClothingSpott"][3])
+                            end
+                        end)
+                        Citizen.Wait(1000)
                     end
                     if Citizen.InvokeNative(0x305C8DCD79DA8B0F, 0, 0x27D1C284) then
                         pricing_table = {}
@@ -537,7 +588,6 @@ Citizen.CreateThread(function()
                         where_open = k
                         cam_pos = v["ClothingCamera"][4]
                         TaskGoToCoordAnyMeans(PlayerPedId(), v["ClothingSpott"][1], v["ClothingSpott"][2], v["ClothingSpott"][3], 1.0, 0, 0, 1, 0)
-                        --Citizen.InvokeNative(0x322BFDEA666E2B0E, PlayerPedId(), 307.32, 813.41, 119.7, 2.0, -1, 1, 1, 1, 1)
                         SetEntityCoords(PlayerPedId(), v["ClothingSpott"][1], v["ClothingSpott"][2], v["ClothingSpott"][3])
                         SetEntityHeading(PlayerPedId(), heading)
                         FreezeEntityPosition(PlayerPedId(), true)
@@ -645,7 +695,6 @@ function Button_Prompt2()
 end
 
 function StartCamClothing(x,y,z, heading, zoom)
-    Citizen.InvokeNative(0x17E0198B3882C2CB, PlayerPedId())
     DestroyAllCams(true)
     local camera_pos = GetObjectOffsetFromCoords(x,y,z ,0.0 ,1.0, 1.0, 1.0)
     camera = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", x,y,z, -10.0, 00.00, heading, zoom, true, 0)
@@ -1333,6 +1382,7 @@ RegisterNUICallback('close', function(data, cb)
     in_clothe = false
     EndCam()
     ExecuteCommand(_U('2'))
+    TriggerServerEvent("gum_clothing:clearSeason")
     SetNuiFocus(false, false)
     SendNUIMessage({
         type = "clothing_maker",
@@ -1707,7 +1757,7 @@ RegisterNUICallback('save_clothing', function(data, cb)
     for k,v in pairs(pricing_table) do
         price = price+v
     end
-    TriggerEvent("guminputs:getInput", "Potvrdit", "Jméno outfitu za : "..price.."$", function(cb)
+    TriggerEvent("guminputs:getInput", _U('17'), _U('19').. " : "..price.."$", function(cb)
         local answer = tostring(cb)
         if answer ~= 'close' and answer ~= '' then
             TriggerServerEvent("gum_clothes:save_clothes", Clothe_Table, price, answer)
@@ -1753,5 +1803,5 @@ function EndCam()
     DestroyCam(camera, false)
     camera = nil
     DestroyAllCams(true)
-    Citizen.InvokeNative(0xD0AFAFF5A51D72F7, PlayerPedId())
+    -- Citizen.InvokeNative(0xD0AFAFF5A51D72F7, PlayerPedId())
 end

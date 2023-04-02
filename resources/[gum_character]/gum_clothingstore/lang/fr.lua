@@ -16,6 +16,9 @@ Locales["fr"] = {
     ['14'] = "Magasin de vêtements Rhodes",
     ['15'] = "Magasin de vêtements Black Water",
     ['16'] = "Magasin de vêtements",
+    ['17'] = "Confirmer",
+    ['18'] = "Rejoindre le vestaire de votre amis avec son id : ",
+    ['19'] = "Nom de votre tenue : ",
 
     --Commands
     ['200'] = "hats",

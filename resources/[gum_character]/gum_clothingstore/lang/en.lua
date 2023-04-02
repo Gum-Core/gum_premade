@@ -16,7 +16,9 @@ Locales["en"] = {
     ['14'] = "Rhodes clothing store",
     ['15'] = "Black Water clothing store",
     ['16'] = "Clothes store",
-
+    ['17'] = "Confirm",
+    ['18'] = "Join your friend's locker room with their id: ",
+    ['19'] = "Name of your outfit: ",
     --Commands
     ['200'] = "hats",
     ['201'] = "glass",

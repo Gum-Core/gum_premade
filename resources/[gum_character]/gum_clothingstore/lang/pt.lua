@@ -16,7 +16,9 @@ Locales["pt"] = {
     ['14'] = "Loja de roupas em Rodes",
     ['15'] = "Loja de roupas Black Water",
     ['16'] = "Loja de roupas",
-
+    ['17'] = "Confirmar",
+    ['18'] = "Entre no vestiário do seu amigo com o id dele: ",
+    ['19'] = "Nome da sua roupa: ",
     --Commands
     ['200'] = "hats",
     ['201'] = "glass",

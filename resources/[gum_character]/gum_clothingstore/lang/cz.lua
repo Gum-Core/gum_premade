@@ -15,6 +15,10 @@ Locales["cz"] = {
     ['14'] = "Obchod s oblečením Rhodes",
     ['15'] = "Obchod s oblečením Black Water",
     ['16'] = "Obchod s oblečením",
+    ['17'] = "Potvrzení",
+    ['18'] = "Připojte se k šatně svých přátel se syn id: ",
+    ['19'] = "Název vašeho oblečení: ",
+
     --Commands
     ['200'] = "hats",
     ['201'] = "glass",

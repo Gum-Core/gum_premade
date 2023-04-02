@@ -1,5 +1,5 @@
 Config = {}
-Config.defaultlang = "en"
+
 Config.Pricing = {
     Hat = 0.05,
     EyeWear = 0.05,
@@ -36,7 +36,7 @@ Config.Pricing = {
 
 Config.ClothingStore = {
     [1] =  {
-        ["ClothingBlip"] = _U("12"),
+        ["ClothingBlip"] = _U('12'),
         ["ClothingStore"] = {-325.85, 774.49, 118.12},
         ["ClothingSpott"] = {-329.27, 775.06, 120.65},
         ["ClothingCamera"] = {-326.52, 775.40, 122.08, 94.14},
@@ -45,7 +45,7 @@ Config.ClothingStore = {
         ["DebugEscape"] = false,
     },
     [2] =  {
-        ["ClothingBlip"] = _U("13"),
+        ["ClothingBlip"] = _U('13'),
         ["ClothingStore"] = {2554.6875, -1168.54052734375, 53.68349456787109},
         ["ClothingSpott"] = {2556.114501953125, -1161.2445068359375, 52.70168304443359},
         ["ClothingCamera"] = {2556.05, -1159.14, 54.15, -178.40},
@@ -54,7 +54,7 @@ Config.ClothingStore = {
         ["DebugEscape"] = true,
     },
     [3] =  {
-        ["ClothingBlip"] = _U("14"),
+        ["ClothingBlip"] = _U('14'),
         ["ClothingStore"] = {1322.535400390625, -1291.8333740234375, 77.02304077148438},
         ["ClothingSpott"] = {1323.9852294921875, -1288.159423828125, 76.01953125},
         ["ClothingCamera"] = {1322.89, -1290.71, 77.63, -23.15},
@@ -63,7 +63,7 @@ Config.ClothingStore = {
         ["DebugEscape"] = true,
     },
 	[4] =  {
-        ["ClothingBlip"] = _U("15"),
+        ["ClothingBlip"] = _U('15'),
         ["ClothingStore"] = {-761.11, -1291.90, 43.89},
         ["ClothingSpott"] = {-767.36, -1292.50, 42.94},
         ["ClothingCamera"] = {-764.20, -1292.94, 44.69, 86.88},
@@ -72,14 +72,13 @@ Config.ClothingStore = {
     },
     [5] =  {
         ["BlipEnable"] = false,
-        ["ClothingBlip"] = _U("16"),
+        ["ClothingBlip"] = _U('16'),
         ["ClothingStore"] = {2039.86376953125,1996.1104736328127,260.0164794921875},
         ["ClothingSpott"] = {2039.86376953125,1996.1104736328127,259.0164794921875},
         ["ClothingCamera"] = {2034.70, 1994.97, 261.06, -83.60},
         ["ClothingEscape"] = {2039.86376953125,1996.1104736328127,260.0164794921875},
-        ["Light"] = {-766.7832641601562,-1292.2391357421875,44.36526870727539},
+        ["Light"] = {2040.86376953125,1996.1104736328127,260.0164794921875},
     },
-    
 }
 
 
