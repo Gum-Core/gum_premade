@@ -15,28 +15,25 @@ AddEventHandler('getApi', function(cb)
 	cb(gumApi)
 end)
 
-Citizen.CreateThread(function()
-    while true do
-        hit, coords, entity = RayCastGamePlayCamera(1000.0)
-		if hit then
-            gumApi.getTarget()
-			if targetEnable == true then
-				gumApi.drawMe(coords.x, coords.y, coords.z, "↓", 10.0)
-			end
-		end
+local function InitializeRayCast()
+    repeat 
+		hit, coords, entity = RayCastGamePlayCamera(1000.0)
+
+        if hit then
+            gumApi.drawMe(coords.x, coords.y, coords.z, "↓", 10.0)
+        end
+
         Citizen.Wait(5)
+    until not targetEnable
+end
+
+RegisterCommand("target", function(_, _, _)
+    targetEnable = not targetEnable
+
+    if targetEnable then
+        CreateThread(InitializeRayCast)
     end
 end)
-
-
-RegisterCommand("target", function(source, args, rawCommand)
-	if targetEnable == false then
-		targetEnable = true
-	else
-		targetEnable = false
-	end
-end)
-
 
 function gumApi.drawMe(x, y, z, text, dist, marker)
 	local playerCoords = GetEntityCoords(PlayerPedId())
