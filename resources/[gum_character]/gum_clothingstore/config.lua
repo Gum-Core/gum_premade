@@ -1,5 +1,5 @@
 Config = {}
-
+Config.defaultlang = "en"
 Config.Pricing = {
     Hat = 0.05,
     EyeWear = 0.05,
