@@ -26,7 +26,7 @@ local blockSpamming = false
 
 function Button_Prompt()
 	Citizen.CreateThread(function()
-		local str = _U('0')
+		local str = tostring(_U('0'))
 		PickItemGround = Citizen.InvokeNative(0x04F97DE45A519419)
 		PromptSetControlAction(PickItemGround, 0x27D1C284)
 		str = CreateVarString(10, 'LITERAL_STRING', str)
