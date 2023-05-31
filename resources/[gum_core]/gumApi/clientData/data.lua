@@ -9,6 +9,9 @@ exports('gumApi',function()
     self.getTarget = function()
 		return gumApi.getTarget()
 	end
+	self.getPromptButtonData = function(promptHash, text)
+		return gumApi.getPromptButtonData(x, y, z, dist, mark)
+	end
     self.getPrompt = function(promptHash, text)
 		gumApi.getPrompt(promptHash, text)
 	end
